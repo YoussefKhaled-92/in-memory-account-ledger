@@ -1,0 +1,26 @@
+name: Verify ledger
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet build AccountLedger.slnx -c Release -m:1 -p:UseSharedCompilation=false
+      - run: dotnet run --project tests/Ledger.Tests -c Release --no-build
+      - run: dotnet run --project src/Ledger.Replay -c Release --no-build
+      - name: Verify the required known failure is real
+        shell: bash
+        run: |
+          set +e
+          dotnet run --project tests/Ledger.Tests -c Release --no-build -- --known-failure > known-failure.txt 2>&1
+          result=$?
+          set -e
+          cat known-failure.txt
+          test "$result" -eq 1
+          grep -q 'FAIL KNOWN LIMITATION: abandoned authorization should eventually expire: Expected 0; actual 1.' known-failure.txt
+          grep -q '1 failed;' known-failure.txt

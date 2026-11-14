@@ -1,0 +1,41 @@
+PASS Criterion 1: raw Day 2 principal is -370 at E8
+PASS Criterion 2 refused: E7 affects Day 2 and Day 4 immediately, Day 5 on close
+PASS Day 3 stays positive after the Day 2 fee and is not charged
+PASS Criterion 3: Auth-A settles and releases unused 15
+PASS Criterion 4: unknown authorization cannot debit funds
+PASS Criterion 5: approved hold changes available only
+PASS Auth-B is rejected at its original decision point and never retried after E9
+PASS Criterion 6 refused: reversing E7 retains 75 of assessed fees
+PASS Criterion 7 refused: BHD minor units conserved across unequal rounded parts
+PASS Criterion 8: capitalization is exactly the sum of daily rounded accruals
+PASS Final AED daily balances agree with independent hand calculation
+PASS Final daily AED accruals are restated, positive only, excluding capitalization
+PASS E10 remains last, its booked day does not rewind recorded time
+PASS Backdating preserves every previously appended entry and decision
+PASS Public collection views cannot mutate ledger state
+PASS Identical input retry is idempotent
+PASS Conflicting input ID is refused before financial mutation
+PASS Repeated declined authorization returns original rejection without extra history
+PASS Exact available boundary approves; one minor unit above rejects
+PASS Settlement above hold rejects without closing hold or debiting
+PASS Repeated settlement with new ID cannot debit twice
+PASS Authorization identity is account scoped
+PASS Explicit release ends a hold and leaves ledger unchanged
+PASS Settlement affordability is not retrospectively re-decided
+PASS Duplicate reversal is rejected with no duplicate compensating entry
+PASS Unknown reversal and reversal at different value date are rejected
+PASS Reversing an instalment credit compensates every part exactly
+PASS Finalization and fee assessment are idempotent
+PASS New events after finalization are refused
+PASS Fee amount is configurable and participates in downstream daily basis
+PASS Interest rate is configurable, positive balances only
+PASS Rounding is AwayFromZero for both currency precisions
+PASS Allocator property: conserve total across currency, amount, and part counts
+PASS Invalid amount and instalment count reject without principal entries
+PASS Unknown account rejects and records an error
+PASS Unsupported BHD overdraft policy fails explicitly, no invented FX fee
+PASS Invalid dates are refused before input replay
+PASS Reserved system source IDs cannot collide with external input
+PASS Invalid later-account interest policy cannot partly capitalize an earlier account
+FAIL KNOWN LIMITATION: abandoned authorization should eventually expire: Expected 0; actual 1.
+39 passed; 1 failed; 40 total.

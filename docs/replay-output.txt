@@ -1,0 +1,65 @@
+ARRIVAL ORDER (recorded clock is monotonic; balances use value dates)
+E1 booked=1 recorded=1 ACCEPTED | AED current=1200.00 available=1200.00
+E2 booked=1 recorded=1 ACCEPTED | AED current=250.00 available=250.00
+E3 booked=2 recorded=2 ACCEPTED | AED current=250.00 available=50.00
+E4 booked=3 recorded=3 ACCEPTED | AED current=650.00 available=450.00
+E5 booked=4 recorded=4 ACCEPTED | AED current=465.00 available=465.00
+E6 booked=4 recorded=4 REJECTED: Unknown authorization. | AED current=465.00 available=465.00
+E7 booked=5 recorded=5 ACCEPTED | AED current=-205.00 available=-205.00
+E8 booked=5 recorded=5 REJECTED: Insufficient available balance for authorization. | AED current=-205.00 available=-205.00
+  End of Day 5 input checkpoint, before Day 5 close: D1=250.00, D2=-395.00, D3=5.00, D4=-205.00, D5=-205.00
+E9 booked=6 recorded=6 ACCEPTED | AED current=390.00 available=390.00
+E10 booked=5 recorded=6 ACCEPTED | AED current=390.00 available=390.00
+
+FINAL RESTATED DAILY REPORT (known after E10 and finalization)
+Fees are retained assessments. Authorization decisions are as recorded, not restated.
+Day 1
+  ACC-001 AED closing=250.00 interest-basis=250.00 accrual=0.10 fee-count=0 fee-total=0.00
+    authorizations as observed by day: none
+    errors recorded this day: none
+  ACC-002 BHD closing=0.000 interest-basis=0.000 accrual=0.000 fee-count=0 fee-total=0.000
+    authorizations as observed by day: none
+    errors recorded this day: none
+Day 2
+  ACC-001 AED closing=225.00 interest-basis=225.00 accrual=0.09 fee-count=1 fee-total=25.00
+    fee value-day=2, assessed on recorded-day=5
+    authorizations as observed by day: Auth-A=Active
+    errors recorded this day: none
+  ACC-002 BHD closing=0.000 interest-basis=0.000 accrual=0.000 fee-count=0 fee-total=0.000
+    authorizations as observed by day: none
+    errors recorded this day: none
+Day 3
+  ACC-001 AED closing=625.00 interest-basis=625.00 accrual=0.25 fee-count=0 fee-total=0.00
+    authorizations as observed by day: Auth-A=Active
+    errors recorded this day: none
+  ACC-002 BHD closing=0.000 interest-basis=0.000 accrual=0.000 fee-count=0 fee-total=0.000
+    authorizations as observed by day: none
+    errors recorded this day: none
+Day 4
+  ACC-001 AED closing=415.00 interest-basis=415.00 accrual=0.17 fee-count=1 fee-total=25.00
+    fee value-day=4, assessed on recorded-day=5
+    authorizations as observed by day: Auth-A=Settled
+    errors recorded this day: E6: Unknown authorization.
+  ACC-002 BHD closing=0.000 interest-basis=0.000 accrual=0.000 fee-count=0 fee-total=0.000
+    authorizations as observed by day: none
+    errors recorded this day: none
+Day 5
+  ACC-001 AED closing=390.00 interest-basis=390.00 accrual=0.16 fee-count=1 fee-total=25.00
+    fee value-day=5, assessed on recorded-day=6
+    authorizations as observed by day: Auth-A=Settled, Auth-B=Rejected
+    errors recorded this day: E8: Insufficient available balance for authorization.
+  ACC-002 BHD closing=10.000 interest-basis=10.000 accrual=0.004 fee-count=0 fee-total=0.000
+    authorizations as observed by day: none
+    errors recorded this day: none
+Day 6
+  ACC-001 AED closing=390.93 interest-basis=390.00 accrual=0.16 fee-count=0 fee-total=0.00
+    authorizations as observed by day: Auth-A=Settled, Auth-B=Rejected
+    errors recorded this day: none
+  ACC-002 BHD closing=10.008 interest-basis=10.000 accrual=0.004 fee-count=0 fee-total=0.000
+    authorizations as observed by day: none
+    errors recorded this day: none
+
+CAPITALIZATION (one credit per funded account, exact sum of daily rounded accruals)
+ACC-001: 0.93 value-day=6
+ACC-002: 0.008 value-day=6
+BHD instalments: 3.334 + 3.333 + 3.333
