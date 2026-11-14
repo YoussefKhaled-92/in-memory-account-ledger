@@ -31,6 +31,7 @@ suite.Add(("Every scenario boundary preserves the pre-refactor complete history"
 void Test(string name, Action body) => suite.Add((name, body));
 
 ExtensionTests.Register(Test);
+CompositionTests.Register(Test);
 
 void Equal<T>(T expected, T actual)
 {

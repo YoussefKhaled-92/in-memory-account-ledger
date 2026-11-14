@@ -6,7 +6,7 @@ Public submission: [GitHub repository](https://github.com/YoussefKhaled-92/in-me
 
 ## Run
 
-Install the .NET 10 SDK. No third-party packages are needed. From the repository root:
+Install the .NET 10 SDK. Restore uses nuget.org for Microsoft's `Microsoft.Extensions.DependencyInjection` 10.0.0 package and its abstractions dependency. From the repository root:
 
 ```sh
 dotnet build AccountLedger.slnx -c Release -m:1 -p:UseSharedCompilation=false
@@ -41,7 +41,7 @@ Assessed fees: AED 25 on Days 2, 4 and 5. Errors: E6 unknown authorization and E
 - `src/Ledger.Domain`: individual business types, reservation/reversal invariants, currency precision and financial policies.
 - `src/Ledger.Application`: distinct operation handlers, immutable handler registry, arrival-order orchestration, daily product use cases, scan-based projections and the journal port.
 - `src/Ledger.Infrastructure.InMemory`: private append-only histories, shared sequence allocation and detached read-only snapshots.
-- `src/Ledger.Core`: small `AccountLedger` compatibility facade and default composition root; business workflows are in Application.
+- `src/Ledger.Core`: small `AccountLedger` compatibility facade and Microsoft DI composition root; business workflows are in Application.
 - `src/Ledger.Replay`: specified scenario and console reporting; no calculations duplicated in the printer. Tests link the scenario fixture as source.
 - `tests/Ledger.Tests`: original assertions, pre-refactor complete-history fixture, extension/workflow tests and the explicit failing design probe.
 
@@ -50,6 +50,8 @@ Read [the architecture and extension guide](docs/CLEAN-ARCHITECTURE.md) for the 
 For browsing, Domain types are grouped into `Entities`, `ValueObjects`, `Enums`, `Records`, `Interfaces`, `Policies`, `Rules`, `Services` and `Exceptions`. Application groups use cases under `Postings`, `Authorizations`, `Products` and `Workflow`, with contracts in `Interfaces`. The journal is in `Journals`, the facade in `Facades`, and scenario data in `Scenarios`. Imports are explicit in each file; project-wide global and implicit imports are disabled. `.editorconfig` and CI keep braces and formatting consistent.
 
 Public collection queries return read-only snapshots. Records carry global sequence numbers so postings, input outcomes, and lifecycle changes can be correlated without rewriting history. The result sequence is an outcome marker, not an instruction to order business inputs by date.
+
+Each `AccountLedger` owns a private DI provider. Journal, session, queries, handlers and workflows are singletons **within that ledger only**; separate ledgers never share internal mutable state. Constructor injection remains in Application, which has no DI package reference. Caller-supplied policy and additional handler instances retain their configuration and remain caller-owned; supply separate instances for stateful clients. Prefer `using var ledger = new AccountLedger(...)` to release the container. Disposal is idempotent and does not call `Finish()`; new processing/finalization then throws `ObjectDisposedException`, while existing in-memory reads remain available. This adds no concurrency or transaction guarantee.
 
 `Release` is a small explicit lifecycle extension used by tests; no release is injected into the supplied scenario. It exists to distinguish cancellation from settlement and makes the production lifecycle discussion concrete.
 

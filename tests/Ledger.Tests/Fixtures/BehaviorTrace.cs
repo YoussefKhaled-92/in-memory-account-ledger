@@ -11,7 +11,7 @@ static class BehaviorTrace
     public static string Capture()
     {
         var frames = new List<object>();
-        var ledger = AssessmentScenario.Create();
+        using var ledger = AssessmentScenario.Create();
 
         Snapshot("opening");
 

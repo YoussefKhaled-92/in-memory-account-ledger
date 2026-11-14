@@ -6,6 +6,11 @@ PASS Unknown operation records a decline and leaves money and holds unchanged
 PASS Day-boundary policy failure stays fatal before dispatch without recording an outcome
 PASS Post-success fee failure retains the accepted outcome as documented
 PASS Authorization domain forbids terminal settlement and excess capture
+PASS Containers isolate journal, sequences, holds, fees, accruals and finality per ledger
+PASS Per-ledger container preserves independent fee and interest configuration
+PASS Facade eagerly rejects duplicate handlers and invalid configuration
+PASS Disposal releases only the owned container and never finalizes the ledger
+PASS A custom handler registered in one container does not leak into another
 PASS Criterion 1: raw Day 2 principal is -370 at E8
 PASS Criterion 2 refused: E7 affects Day 2 and Day 4 immediately, Day 5 on close
 PASS Day 3 stays positive after the Day 2 fee and is not charged
@@ -45,5 +50,5 @@ PASS Unsupported BHD overdraft policy fails explicitly, no invented FX fee
 PASS Invalid dates are refused before input replay
 PASS Reserved system source IDs cannot collide with external input
 PASS Invalid later-account interest policy cannot partly capitalize an earlier account
-47 passed; 0 failed; 47 total.
+52 passed; 0 failed; 52 total.
 Required annotated failing test: rerun with --known-failure (expected exit 1).

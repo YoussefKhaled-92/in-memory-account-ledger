@@ -14,7 +14,12 @@ jobs:
       - name: Verify source formatting and explicit imports
         run: dotnet format AccountLedger.slnx --no-restore --verify-no-changes --diagnostics IDE0011 IDE0005
       - run: dotnet run --project tests/Ledger.Tests -c Release --no-build
-      - run: dotnet run --project src/Ledger.Replay -c Release --no-build
+      - name: Verify exact replay output
+        shell: bash
+        run: |
+          dotnet run --project src/Ledger.Replay -c Release --no-build > replay-output.txt
+          cat replay-output.txt
+          diff --strip-trailing-cr -u docs/replay-output.txt replay-output.txt
       - name: Verify the required known failure is real
         shell: bash
         run: |

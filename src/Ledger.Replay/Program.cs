@@ -6,7 +6,7 @@ using Ledger.Domain;
 
 CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
-var ledger = AssessmentScenario.Create();
+using var ledger = AssessmentScenario.Create();
 
 Console.WriteLine("ARRIVAL ORDER (recorded clock is monotonic; balances use value dates)");
 

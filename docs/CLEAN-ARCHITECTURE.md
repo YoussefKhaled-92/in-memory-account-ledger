@@ -16,14 +16,43 @@ flowchart TD
 
 These are source dependencies. Runtime execution calls the journal through the application's
 `ILedgerJournal` port. Domain has no references to the other projects. Infrastructure knows
-the port; Application never references the concrete in-memory adapter. Direct constructor
-injection keeps object construction inspectable without a container or mediator framework.
+the port; Application never references the concrete in-memory adapter. Constructor injection
+remains the way use cases receive dependencies. Microsoft.Extensions.DependencyInjection
+manages their construction at the outer composition boundary; no container reaches Application or Domain.
 
 `Ledger.Core` is a small compatibility facade and composition root. It preserves the
 `AccountLedger` methods used by the original regression tests, while forwarding to real
-application use cases. It contains the explicit list of default handler registrations.
+application use cases. `Composition/LedgerComposition.cs` contains the explicit service and handler registrations.
 The assessment constants and input fixture moved to Replay; the tests link that fixture as
 source, so neither reusable library nor facade includes assessment-specific data.
+
+### Container ownership and lifetimes
+
+Every facade builds and owns a fresh private provider with build and scope validation enabled.
+Journal, session, queries, registry, product services, workflows and the six default handlers
+are registered as singletons in that provider: one graph for one ledger's lifetime, not one
+graph for the whole process. No static provider or journal exists. A transient journal would
+split history between use cases; a shared process singleton would leak history between ledgers.
+An extra scope adds no value when the provider already has exactly one ledger owner.
+
+Only factories for runtime arguments (`accounts` and `windowDays`) use explicit construction.
+Other use cases and handlers are activated through their constructors. `IEnumerable<IEventHandler>`
+feeds the existing registry, preserving registration order and duplicate/blank-kind rejection.
+The facade eagerly resolves the graph so invalid accounts, windows and registrations fail at
+construction, and disposes its provider if resolution fails. Service lookup stays at this boundary.
+
+Policies and additional handlers use instance registrations and remain caller-owned, including
+disposal. The container does not clone arbitrary custom instances; callers must provide separate
+instances when they have mutable per-ledger state. The existing deterministic, single-writer
+contracts still apply. Configuration is fixed for the replay; DI does not add policy versioning.
+
+Use `using var ledger = new AccountLedger(...)`. `Dispose()` releases the owned provider,
+is idempotent, and never finalizes financial history. `Process` and `Finish` reject use after
+disposal; existing in-memory reads remain available. Existing construction and financial APIs
+are unchanged; implementing `IDisposable` is additive. Microsoft's DI package and abstractions
+now restore from nuget.org; the pure inner projects remain package-free.
+
+These ownership rules follow the [.NET DI guidelines](https://learn.microsoft.com/dotnet/core/extensions/dependency-injection-guidelines).
 
 ### Source navigation and formatting
 
@@ -55,6 +84,7 @@ Ledger.Application/
 
 Ledger.Infrastructure.InMemory/Journals/
 Ledger.Core/Facades/
+Ledger.Core/Composition/
 Ledger.Replay/Scenarios/
 Ledger.Tests/Fixtures/
 Ledger.Tests/Suites/
@@ -125,7 +155,7 @@ public sealed class PromotionalCredit : IEventHandler
 }
 
 // At the client's composition root:
-var ledger = new AccountLedger(accounts, feePolicy, interestPolicy, windowDays,
+using var ledger = new AccountLedger(accounts, feePolicy, interestPolicy, windowDays,
     additionalHandlers: [new PromotionalCredit()]);
 ledger.Process(new FinancialEvent("PROMO:1", 1, 1,
     new EventKind("Client.PromotionalCredit"), "A", 12.345m));
@@ -133,7 +163,7 @@ ledger.Process(new FinancialEvent("PROMO:1", 1, 1,
 
 `ExtensionTests` executes this kind of extension through the unchanged production coordinator,
 including exact retry, sequence ordering and finality checks. The default six use cases remain
-registered in the facade. Replacing a built-in registration is intentionally rejected there;
+registered in Core's composition root. Replacing a built-in registration is intentionally rejected there;
 a client needing a different handler set can compose Application and the adapter directly.
 
 This is a deliberate extension boundary, not a promise that arbitrary banking features need
@@ -197,4 +227,5 @@ compatibility or persisted-format migration is claimed for the former assessment
 The cost is more files, explicit construction and a small facade project. The gain is ownership
 that follows business concepts, compile-time inward dependencies, independent use cases and
 an executable client extension path. No web host, database, durable journal, event bus, generic
-repository framework, background scheduler or third-party NuGet package was introduced.
+repository framework or background scheduler was introduced. Core now uses Microsoft's DI
+package for composition; the inner layers retain constructor injection and inward dependencies.
