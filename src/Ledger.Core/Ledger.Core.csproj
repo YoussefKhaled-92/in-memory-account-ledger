@@ -1,1 +1,6 @@
-<Project Sdk="Microsoft.NET.Sdk" />
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../Ledger.Application/Ledger.Application.csproj" />
+    <ProjectReference Include="../Ledger.Infrastructure.InMemory/Ledger.Infrastructure.InMemory.csproj" />
+  </ItemGroup>
+</Project>

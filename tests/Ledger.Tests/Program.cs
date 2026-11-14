@@ -15,6 +15,7 @@ suite.Add(("Every scenario boundary preserves the pre-refactor complete history"
         throw new Exception("Complete scenario history differs from fcc7c713 baseline.");
 }));
 void Test(string name, Action body) => suite.Add((name, body));
+ExtensionTests.Register(Test);
 void Equal<T>(T expected, T actual)
 {
     if (!EqualityComparer<T>.Default.Equals(expected, actual))

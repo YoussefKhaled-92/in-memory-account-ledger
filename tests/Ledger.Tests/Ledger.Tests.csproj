@@ -2,4 +2,5 @@
   <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
   <ItemGroup><ProjectReference Include="../../src/Ledger.Core/Ledger.Core.csproj" /></ItemGroup>
   <ItemGroup><None Update="scenario-baseline.json" CopyToOutputDirectory="PreserveNewest" /></ItemGroup>
+  <ItemGroup><Compile Include="../../src/Ledger.Replay/AssessmentScenario.cs" Link="AssessmentScenario.cs" /></ItemGroup>
 </Project>
