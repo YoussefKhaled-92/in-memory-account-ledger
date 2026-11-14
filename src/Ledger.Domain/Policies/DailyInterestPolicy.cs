@@ -1,3 +1,5 @@
+using System;
+
 namespace Ledger.Domain;
 
 public sealed class DailyInterestPolicy : IInterestPolicy
@@ -6,7 +8,11 @@ public sealed class DailyInterestPolicy : IInterestPolicy
 
     public DailyInterestPolicy(decimal dailyRate)
     {
-        if (dailyRate < 0m) throw new ArgumentOutOfRangeException(nameof(dailyRate));
+        if (dailyRate < 0m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(dailyRate));
+        }
+
         this.dailyRate = dailyRate;
     }
 

@@ -25,6 +25,52 @@ application use cases. It contains the explicit list of default handler registra
 The assessment constants and input fixture moved to Replay; the tests link that fixture as
 source, so neither reusable library nor facade includes assessment-specific data.
 
+### Source navigation and formatting
+
+Folders describe the role of each type. Namespaces remain stable; moving a file does not
+change the public type name or the dependency direction.
+
+```text
+Ledger.Domain/
+  Entities/         Account and authorization lifecycle
+  ValueObjects/     Currency and open operation identifiers
+  Enums/            Posting kinds and authorization statuses
+  Records/          Immutable inputs, postings, outcomes and assessments
+  Interfaces/       Financial policy contracts
+  Policies/         Fee and interest policy implementations
+  Rules/            Shared posting and reversal invariants
+  Services/         Minor-unit instalment allocation
+  Exceptions/       Business rule exception
+
+Ledger.Application/
+  Interfaces/       Journal and operation-handler contracts
+  Dispatch/         Registry and operation context
+  Queries/          Synchronous read projections
+  State/            Single-writer workflow state
+  UseCases/
+    Postings/       Credit, debit and principal reversal
+    Authorizations/ Approval, settlement and release
+    Products/       Fee assessment and interest capitalization
+    Workflow/       Input processing and finalization
+
+Ledger.Infrastructure.InMemory/Journals/
+Ledger.Core/Facades/
+Ledger.Replay/Scenarios/
+Ledger.Tests/Fixtures/
+Ledger.Tests/Suites/
+```
+
+Every source file declares its own required imports. There are no project-wide
+`GlobalUsings.cs` files, and implicit framework imports are disabled in
+`Directory.Build.props`. Global imports are a C# convenience for applying one import
+to every file in a project; they are not required by Clean Architecture or this design.
+Explicit imports make a file's dependencies visible at the top while reading it.
+
+`.editorconfig` records indentation, brace and whitespace conventions. Conditions and
+loops use braces, guard clauses are separated, and blank lines distinguish preparation,
+validation, execution and return steps. The existing GitHub verification also checks
+formatting, braces and unnecessary imports, helping future changes follow the same style.
+
 ## Business ownership
 
 - **Account and currency:** account validation, decimal precision and rounding belong to Domain.
@@ -133,7 +179,7 @@ handle backdated suffixes and reconcile to the authoritative history.
 ## Compatibility, tests and tradeoffs
 
 The original 39 regression cases and the real opt-in failing expiry probe remain. Existing
-test bodies did not need rewriting; a global Domain import resolves the moved types.
+assertions retain their behavior; each file imports the Domain types it uses explicitly.
 `scenario-baseline.json` was captured before refactoring, at every input boundary and finality,
 and compares all histories, daily balances, availability, input fields and sequence values.
 It is an additional behavior guard, not an independent mathematical oracle; the existing

@@ -1,6 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
-  <ItemGroup><ProjectReference Include="../../src/Ledger.Core/Ledger.Core.csproj" /></ItemGroup>
-  <ItemGroup><None Update="scenario-baseline.json" CopyToOutputDirectory="PreserveNewest" /></ItemGroup>
-  <ItemGroup><Compile Include="../../src/Ledger.Replay/AssessmentScenario.cs" Link="AssessmentScenario.cs" /></ItemGroup>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Ledger.Core/Ledger.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Fixtures/scenario-baseline.json" TargetPath="scenario-baseline.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="../../src/Ledger.Replay/Scenarios/AssessmentScenario.cs" Link="Fixtures/AssessmentScenario.cs" />
+  </ItemGroup>
 </Project>

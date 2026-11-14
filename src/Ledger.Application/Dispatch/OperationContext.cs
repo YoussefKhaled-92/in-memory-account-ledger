@@ -1,3 +1,5 @@
+using Ledger.Domain;
+
 namespace Ledger.Application;
 
 /// <summary>Validated account and arrival day, with the synchronous journal/query boundary.</summary>

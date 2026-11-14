@@ -47,6 +47,8 @@ Assessed fees: AED 25 on Days 2, 4 and 5. Errors: E6 unknown authorization and E
 
 Read [the architecture and extension guide](docs/CLEAN-ARCHITECTURE.md) for the dependency diagram, business boundaries, registration example and migration tradeoffs. New operation kinds register an `IEventHandler`; dispatch has no switch. `EventKind` is an open, string-backed value type, while the existing operation names stay unchanged. Domain types moved to `Ledger.Domain`; numeric enum casts/serialization and binary compatibility are not preserved.
 
+For browsing, Domain types are grouped into `Entities`, `ValueObjects`, `Enums`, `Records`, `Interfaces`, `Policies`, `Rules`, `Services` and `Exceptions`. Application groups use cases under `Postings`, `Authorizations`, `Products` and `Workflow`, with contracts in `Interfaces`. The journal is in `Journals`, the facade in `Facades`, and scenario data in `Scenarios`. Imports are explicit in each file; project-wide global and implicit imports are disabled. `.editorconfig` and CI keep braces and formatting consistent.
+
 Public collection queries return read-only snapshots. Records carry global sequence numbers so postings, input outcomes, and lifecycle changes can be correlated without rewriting history. The result sequence is an outcome marker, not an instruction to order business inputs by date.
 
 `Release` is a small explicit lifecycle extension used by tests; no release is injected into the supplied scenario. It exists to distinguish cancellation from settlement and makes the production lifecycle discussion concrete.
