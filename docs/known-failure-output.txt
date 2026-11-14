@@ -1,3 +1,11 @@
+PASS Every scenario boundary preserves the pre-refactor complete history
+PASS A client operation runs through the unchanged coordinator and retains retry/finality rules
+PASS Registry rejects duplicate operation registrations before execution
+PASS Registry rejects blank operation keys
+PASS Unknown operation records a decline and leaves money and holds unchanged
+PASS Day-boundary policy failure stays fatal before dispatch without recording an outcome
+PASS Post-success fee failure retains the accepted outcome as documented
+PASS Authorization domain forbids terminal settlement and excess capture
 PASS Criterion 1: raw Day 2 principal is -370 at E8
 PASS Criterion 2 refused: E7 affects Day 2 and Day 4 immediately, Day 5 on close
 PASS Day 3 stays positive after the Day 2 fee and is not charged
@@ -38,4 +46,4 @@ PASS Invalid dates are refused before input replay
 PASS Reserved system source IDs cannot collide with external input
 PASS Invalid later-account interest policy cannot partly capitalize an earlier account
 FAIL KNOWN LIMITATION: abandoned authorization should eventually expire: Expected 0; actual 1.
-39 passed; 1 failed; 40 total.
+47 passed; 1 failed; 48 total.

@@ -1,6 +1,6 @@
 # In-memory account ledger
 
-A small C#/.NET 10 ledger with immutable postings, immutable authorization transitions, value-dated queries, configurable financial policies, and an exact arrival-order replay. No HTTP service, database, persistence adapter, or UI. Core state exists only in memory.
+A small C#/.NET 10 ledger with Clean Architecture boundaries, immutable postings, immutable authorization transitions, value-dated queries, configurable financial policies, and an exact arrival-order replay. No HTTP service, database, persistence adapter, or UI. Core state exists only in memory.
 
 Public submission: [GitHub repository](https://github.com/YoussefKhaled-92/in-memory-account-ledger). Anonymous access was verified after publication; the original six implementation/review commits were pushed intact. [GitHub verification](https://github.com/YoussefKhaled-92/in-memory-account-ledger/actions) builds and runs both the regression suite and the documented known-failure probe.
 
@@ -38,12 +38,14 @@ Assessed fees: AED 25 on Days 2, 4 and 5. Errors: E6 unknown authorization and E
 
 ## Design map
 
-- `src/Ledger.Core/Models.cs`: immutable business records, currency precision, explicit statuses.
-- `AccountLedger.cs`: single-writer orchestration, value-date queries, fee assessment, lifecycle validation, reversals, finalization. Small named methods expose each business decision.
-- `Policies.cs`: injectable fee and daily-interest behavior, and minor-unit instalment allocation. Configured policies copy their inputs and do not change during replay.
-- `AssessmentScenario.cs`: composition and specified inputs, kept outside business services.
-- `src/Ledger.Replay`: reporting only; no business calculations duplicated in the printer.
-- `tests/Ledger.Tests`: scenario assertions, boundary tests, and the explicit failing design probe.
+- `src/Ledger.Domain`: individual business types, reservation/reversal invariants, currency precision and financial policies.
+- `src/Ledger.Application`: distinct operation handlers, immutable handler registry, arrival-order orchestration, daily product use cases, scan-based projections and the journal port.
+- `src/Ledger.Infrastructure.InMemory`: private append-only histories, shared sequence allocation and detached read-only snapshots.
+- `src/Ledger.Core`: small `AccountLedger` compatibility facade and default composition root; business workflows are in Application.
+- `src/Ledger.Replay`: specified scenario and console reporting; no calculations duplicated in the printer. Tests link the scenario fixture as source.
+- `tests/Ledger.Tests`: original assertions, pre-refactor complete-history fixture, extension/workflow tests and the explicit failing design probe.
+
+Read [the architecture and extension guide](docs/CLEAN-ARCHITECTURE.md) for the dependency diagram, business boundaries, registration example and migration tradeoffs. New operation kinds register an `IEventHandler`; dispatch has no switch. `EventKind` is an open, string-backed value type, while the existing operation names stay unchanged. Domain types moved to `Ledger.Domain`; numeric enum casts/serialization and binary compatibility are not preserved.
 
 Public collection queries return read-only snapshots. Records carry global sequence numbers so postings, input outcomes, and lifecycle changes can be correlated without rewriting history. The result sequence is an outcome marker, not an instruction to order business inputs by date.
 
