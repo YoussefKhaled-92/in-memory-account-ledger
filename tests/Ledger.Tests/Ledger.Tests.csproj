@@ -1,4 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
   <ItemGroup><ProjectReference Include="../../src/Ledger.Core/Ledger.Core.csproj" /></ItemGroup>
+  <ItemGroup><None Update="scenario-baseline.json" CopyToOutputDirectory="PreserveNewest" /></ItemGroup>
 </Project>

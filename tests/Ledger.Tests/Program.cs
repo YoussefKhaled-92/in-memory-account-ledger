@@ -2,7 +2,18 @@ using Ledger.Core;
 using System.Globalization;
 
 CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
+if (args.Contains("--behavior-trace"))
+{
+    Console.WriteLine(BehaviorTrace.Capture());
+    return 0;
+}
 var suite = new List<(string Name, Action Body)>();
+suite.Add(("Every scenario boundary preserves the pre-refactor complete history", () =>
+{
+    string expected = File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "scenario-baseline.json"));
+    if (expected.Replace("\r\n", "\n").Trim() != BehaviorTrace.Capture().Replace("\r\n", "\n").Trim())
+        throw new Exception("Complete scenario history differs from fcc7c713 baseline.");
+}));
 void Test(string name, Action body) => suite.Add((name, body));
 void Equal<T>(T expected, T actual)
 {

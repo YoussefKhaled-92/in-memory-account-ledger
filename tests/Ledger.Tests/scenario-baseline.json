@@ -1,0 +1,4054 @@
+[
+  {
+    "label": "opening",
+    "RecordedDay": 1,
+    "WindowDays": 6,
+    "Accounts": [
+      {
+        "Id": "ACC-001",
+        "Currency": {
+          "Code": "AED",
+          "DecimalPlaces": 2
+        },
+        "OpeningBalance": 0.00
+      },
+      {
+        "Id": "ACC-002",
+        "Currency": {
+          "Code": "BHD",
+          "DecimalPlaces": 3
+        },
+        "OpeningBalance": 0.000
+      }
+    ],
+    "Entries": [],
+    "AuthorizationHistory": [],
+    "Results": [],
+    "Fees": [],
+    "Accruals": [],
+    "Balances": [
+      {
+        "Id": "ACC-001",
+        "Available": 0.00,
+        "Current": [],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 0.00,
+            "Basis": 0.00
+          },
+          {
+            "Day": 2,
+            "Balance": 0.00,
+            "Basis": 0.00
+          },
+          {
+            "Day": 3,
+            "Balance": 0.00,
+            "Basis": 0.00
+          },
+          {
+            "Day": 4,
+            "Balance": 0.00,
+            "Basis": 0.00
+          },
+          {
+            "Day": 5,
+            "Balance": 0.00,
+            "Basis": 0.00
+          },
+          {
+            "Day": 6,
+            "Balance": 0.00,
+            "Basis": 0.00
+          }
+        ]
+      },
+      {
+        "Id": "ACC-002",
+        "Available": 0.000,
+        "Current": [],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 2,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 3,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 4,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 5,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 6,
+            "Balance": 0.000,
+            "Basis": 0.000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "E1",
+    "RecordedDay": 1,
+    "WindowDays": 6,
+    "Accounts": [
+      {
+        "Id": "ACC-001",
+        "Currency": {
+          "Code": "AED",
+          "DecimalPlaces": 2
+        },
+        "OpeningBalance": 0.00
+      },
+      {
+        "Id": "ACC-002",
+        "Currency": {
+          "Code": "BHD",
+          "DecimalPlaces": 3
+        },
+        "OpeningBalance": 0.000
+      }
+    ],
+    "Entries": [
+      {
+        "Sequence": 1,
+        "SourceId": "E1",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": 1200,
+        "Kind": 0,
+        "Reference": null
+      }
+    ],
+    "AuthorizationHistory": [],
+    "Results": [
+      {
+        "Sequence": 2,
+        "Input": {
+          "Id": "E1",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Credit",
+          "AccountId": "ACC-001",
+          "Amount": 1200,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      }
+    ],
+    "Fees": [],
+    "Accruals": [],
+    "Balances": [
+      {
+        "Id": "ACC-001",
+        "Available": 1200.00,
+        "Current": [],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 1200.00,
+            "Basis": 1200.00
+          },
+          {
+            "Day": 2,
+            "Balance": 1200.00,
+            "Basis": 1200.00
+          },
+          {
+            "Day": 3,
+            "Balance": 1200.00,
+            "Basis": 1200.00
+          },
+          {
+            "Day": 4,
+            "Balance": 1200.00,
+            "Basis": 1200.00
+          },
+          {
+            "Day": 5,
+            "Balance": 1200.00,
+            "Basis": 1200.00
+          },
+          {
+            "Day": 6,
+            "Balance": 1200.00,
+            "Basis": 1200.00
+          }
+        ]
+      },
+      {
+        "Id": "ACC-002",
+        "Available": 0.000,
+        "Current": [],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 2,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 3,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 4,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 5,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 6,
+            "Balance": 0.000,
+            "Basis": 0.000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "E2",
+    "RecordedDay": 1,
+    "WindowDays": 6,
+    "Accounts": [
+      {
+        "Id": "ACC-001",
+        "Currency": {
+          "Code": "AED",
+          "DecimalPlaces": 2
+        },
+        "OpeningBalance": 0.00
+      },
+      {
+        "Id": "ACC-002",
+        "Currency": {
+          "Code": "BHD",
+          "DecimalPlaces": 3
+        },
+        "OpeningBalance": 0.000
+      }
+    ],
+    "Entries": [
+      {
+        "Sequence": 1,
+        "SourceId": "E1",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": 1200,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 3,
+        "SourceId": "E2",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": -950,
+        "Kind": 1,
+        "Reference": null
+      }
+    ],
+    "AuthorizationHistory": [],
+    "Results": [
+      {
+        "Sequence": 2,
+        "Input": {
+          "Id": "E1",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Credit",
+          "AccountId": "ACC-001",
+          "Amount": 1200,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 4,
+        "Input": {
+          "Id": "E2",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Debit",
+          "AccountId": "ACC-001",
+          "Amount": 950,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      }
+    ],
+    "Fees": [],
+    "Accruals": [],
+    "Balances": [
+      {
+        "Id": "ACC-001",
+        "Available": 250.00,
+        "Current": [],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 2,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 3,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 4,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 5,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 6,
+            "Balance": 250.00,
+            "Basis": 250.00
+          }
+        ]
+      },
+      {
+        "Id": "ACC-002",
+        "Available": 0.000,
+        "Current": [],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 2,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 3,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 4,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 5,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 6,
+            "Balance": 0.000,
+            "Basis": 0.000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "E3",
+    "RecordedDay": 2,
+    "WindowDays": 6,
+    "Accounts": [
+      {
+        "Id": "ACC-001",
+        "Currency": {
+          "Code": "AED",
+          "DecimalPlaces": 2
+        },
+        "OpeningBalance": 0.00
+      },
+      {
+        "Id": "ACC-002",
+        "Currency": {
+          "Code": "BHD",
+          "DecimalPlaces": 3
+        },
+        "OpeningBalance": 0.000
+      }
+    ],
+    "Entries": [
+      {
+        "Sequence": 1,
+        "SourceId": "E1",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": 1200,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 3,
+        "SourceId": "E2",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": -950,
+        "Kind": 1,
+        "Reference": null
+      }
+    ],
+    "AuthorizationHistory": [
+      {
+        "Sequence": 5,
+        "SourceId": "E3",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-A",
+        "RecordedDay": 2,
+        "BookedDay": 2,
+        "ValueDay": 2,
+        "HoldAmount": 200,
+        "Status": 0
+      }
+    ],
+    "Results": [
+      {
+        "Sequence": 2,
+        "Input": {
+          "Id": "E1",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Credit",
+          "AccountId": "ACC-001",
+          "Amount": 1200,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 4,
+        "Input": {
+          "Id": "E2",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Debit",
+          "AccountId": "ACC-001",
+          "Amount": 950,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 6,
+        "Input": {
+          "Id": "E3",
+          "BookedDay": 2,
+          "ValueDay": 2,
+          "Kind": "Authorization",
+          "AccountId": "ACC-001",
+          "Amount": 200,
+          "Reference": "Auth-A",
+          "Instalments": 1
+        },
+        "RecordedDay": 2,
+        "Accepted": true,
+        "Error": null
+      }
+    ],
+    "Fees": [],
+    "Accruals": [],
+    "Balances": [
+      {
+        "Id": "ACC-001",
+        "Available": 50.00,
+        "Current": [
+          {
+            "Sequence": 5,
+            "SourceId": "E3",
+            "AccountId": "ACC-001",
+            "AuthorizationId": "Auth-A",
+            "RecordedDay": 2,
+            "BookedDay": 2,
+            "ValueDay": 2,
+            "HoldAmount": 200,
+            "Status": 0
+          }
+        ],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 2,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 3,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 4,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 5,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 6,
+            "Balance": 250.00,
+            "Basis": 250.00
+          }
+        ]
+      },
+      {
+        "Id": "ACC-002",
+        "Available": 0.000,
+        "Current": [],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 2,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 3,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 4,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 5,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 6,
+            "Balance": 0.000,
+            "Basis": 0.000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "E4",
+    "RecordedDay": 3,
+    "WindowDays": 6,
+    "Accounts": [
+      {
+        "Id": "ACC-001",
+        "Currency": {
+          "Code": "AED",
+          "DecimalPlaces": 2
+        },
+        "OpeningBalance": 0.00
+      },
+      {
+        "Id": "ACC-002",
+        "Currency": {
+          "Code": "BHD",
+          "DecimalPlaces": 3
+        },
+        "OpeningBalance": 0.000
+      }
+    ],
+    "Entries": [
+      {
+        "Sequence": 1,
+        "SourceId": "E1",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": 1200,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 3,
+        "SourceId": "E2",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": -950,
+        "Kind": 1,
+        "Reference": null
+      },
+      {
+        "Sequence": 7,
+        "SourceId": "E4",
+        "AccountId": "ACC-001",
+        "RecordedDay": 3,
+        "ValueDay": 3,
+        "Amount": 400,
+        "Kind": 0,
+        "Reference": null
+      }
+    ],
+    "AuthorizationHistory": [
+      {
+        "Sequence": 5,
+        "SourceId": "E3",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-A",
+        "RecordedDay": 2,
+        "BookedDay": 2,
+        "ValueDay": 2,
+        "HoldAmount": 200,
+        "Status": 0
+      }
+    ],
+    "Results": [
+      {
+        "Sequence": 2,
+        "Input": {
+          "Id": "E1",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Credit",
+          "AccountId": "ACC-001",
+          "Amount": 1200,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 4,
+        "Input": {
+          "Id": "E2",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Debit",
+          "AccountId": "ACC-001",
+          "Amount": 950,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 6,
+        "Input": {
+          "Id": "E3",
+          "BookedDay": 2,
+          "ValueDay": 2,
+          "Kind": "Authorization",
+          "AccountId": "ACC-001",
+          "Amount": 200,
+          "Reference": "Auth-A",
+          "Instalments": 1
+        },
+        "RecordedDay": 2,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 8,
+        "Input": {
+          "Id": "E4",
+          "BookedDay": 3,
+          "ValueDay": 3,
+          "Kind": "Credit",
+          "AccountId": "ACC-001",
+          "Amount": 400,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 3,
+        "Accepted": true,
+        "Error": null
+      }
+    ],
+    "Fees": [],
+    "Accruals": [],
+    "Balances": [
+      {
+        "Id": "ACC-001",
+        "Available": 450.00,
+        "Current": [
+          {
+            "Sequence": 5,
+            "SourceId": "E3",
+            "AccountId": "ACC-001",
+            "AuthorizationId": "Auth-A",
+            "RecordedDay": 2,
+            "BookedDay": 2,
+            "ValueDay": 2,
+            "HoldAmount": 200,
+            "Status": 0
+          }
+        ],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 2,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 3,
+            "Balance": 650.00,
+            "Basis": 650.00
+          },
+          {
+            "Day": 4,
+            "Balance": 650.00,
+            "Basis": 650.00
+          },
+          {
+            "Day": 5,
+            "Balance": 650.00,
+            "Basis": 650.00
+          },
+          {
+            "Day": 6,
+            "Balance": 650.00,
+            "Basis": 650.00
+          }
+        ]
+      },
+      {
+        "Id": "ACC-002",
+        "Available": 0.000,
+        "Current": [],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 2,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 3,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 4,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 5,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 6,
+            "Balance": 0.000,
+            "Basis": 0.000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "E5",
+    "RecordedDay": 4,
+    "WindowDays": 6,
+    "Accounts": [
+      {
+        "Id": "ACC-001",
+        "Currency": {
+          "Code": "AED",
+          "DecimalPlaces": 2
+        },
+        "OpeningBalance": 0.00
+      },
+      {
+        "Id": "ACC-002",
+        "Currency": {
+          "Code": "BHD",
+          "DecimalPlaces": 3
+        },
+        "OpeningBalance": 0.000
+      }
+    ],
+    "Entries": [
+      {
+        "Sequence": 1,
+        "SourceId": "E1",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": 1200,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 3,
+        "SourceId": "E2",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": -950,
+        "Kind": 1,
+        "Reference": null
+      },
+      {
+        "Sequence": 7,
+        "SourceId": "E4",
+        "AccountId": "ACC-001",
+        "RecordedDay": 3,
+        "ValueDay": 3,
+        "Amount": 400,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 9,
+        "SourceId": "E5",
+        "AccountId": "ACC-001",
+        "RecordedDay": 4,
+        "ValueDay": 4,
+        "Amount": -185,
+        "Kind": 2,
+        "Reference": "Auth-A"
+      }
+    ],
+    "AuthorizationHistory": [
+      {
+        "Sequence": 5,
+        "SourceId": "E3",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-A",
+        "RecordedDay": 2,
+        "BookedDay": 2,
+        "ValueDay": 2,
+        "HoldAmount": 200,
+        "Status": 0
+      },
+      {
+        "Sequence": 10,
+        "SourceId": "E5",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-A",
+        "RecordedDay": 4,
+        "BookedDay": 4,
+        "ValueDay": 4,
+        "HoldAmount": 200,
+        "Status": 1
+      }
+    ],
+    "Results": [
+      {
+        "Sequence": 2,
+        "Input": {
+          "Id": "E1",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Credit",
+          "AccountId": "ACC-001",
+          "Amount": 1200,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 4,
+        "Input": {
+          "Id": "E2",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Debit",
+          "AccountId": "ACC-001",
+          "Amount": 950,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 6,
+        "Input": {
+          "Id": "E3",
+          "BookedDay": 2,
+          "ValueDay": 2,
+          "Kind": "Authorization",
+          "AccountId": "ACC-001",
+          "Amount": 200,
+          "Reference": "Auth-A",
+          "Instalments": 1
+        },
+        "RecordedDay": 2,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 8,
+        "Input": {
+          "Id": "E4",
+          "BookedDay": 3,
+          "ValueDay": 3,
+          "Kind": "Credit",
+          "AccountId": "ACC-001",
+          "Amount": 400,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 3,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 11,
+        "Input": {
+          "Id": "E5",
+          "BookedDay": 4,
+          "ValueDay": 4,
+          "Kind": "Settlement",
+          "AccountId": "ACC-001",
+          "Amount": 185,
+          "Reference": "Auth-A",
+          "Instalments": 1
+        },
+        "RecordedDay": 4,
+        "Accepted": true,
+        "Error": null
+      }
+    ],
+    "Fees": [],
+    "Accruals": [],
+    "Balances": [
+      {
+        "Id": "ACC-001",
+        "Available": 465.00,
+        "Current": [
+          {
+            "Sequence": 10,
+            "SourceId": "E5",
+            "AccountId": "ACC-001",
+            "AuthorizationId": "Auth-A",
+            "RecordedDay": 4,
+            "BookedDay": 4,
+            "ValueDay": 4,
+            "HoldAmount": 200,
+            "Status": 1
+          }
+        ],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 2,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 3,
+            "Balance": 650.00,
+            "Basis": 650.00
+          },
+          {
+            "Day": 4,
+            "Balance": 465.00,
+            "Basis": 465.00
+          },
+          {
+            "Day": 5,
+            "Balance": 465.00,
+            "Basis": 465.00
+          },
+          {
+            "Day": 6,
+            "Balance": 465.00,
+            "Basis": 465.00
+          }
+        ]
+      },
+      {
+        "Id": "ACC-002",
+        "Available": 0.000,
+        "Current": [],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 2,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 3,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 4,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 5,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 6,
+            "Balance": 0.000,
+            "Basis": 0.000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "E6",
+    "RecordedDay": 4,
+    "WindowDays": 6,
+    "Accounts": [
+      {
+        "Id": "ACC-001",
+        "Currency": {
+          "Code": "AED",
+          "DecimalPlaces": 2
+        },
+        "OpeningBalance": 0.00
+      },
+      {
+        "Id": "ACC-002",
+        "Currency": {
+          "Code": "BHD",
+          "DecimalPlaces": 3
+        },
+        "OpeningBalance": 0.000
+      }
+    ],
+    "Entries": [
+      {
+        "Sequence": 1,
+        "SourceId": "E1",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": 1200,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 3,
+        "SourceId": "E2",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": -950,
+        "Kind": 1,
+        "Reference": null
+      },
+      {
+        "Sequence": 7,
+        "SourceId": "E4",
+        "AccountId": "ACC-001",
+        "RecordedDay": 3,
+        "ValueDay": 3,
+        "Amount": 400,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 9,
+        "SourceId": "E5",
+        "AccountId": "ACC-001",
+        "RecordedDay": 4,
+        "ValueDay": 4,
+        "Amount": -185,
+        "Kind": 2,
+        "Reference": "Auth-A"
+      }
+    ],
+    "AuthorizationHistory": [
+      {
+        "Sequence": 5,
+        "SourceId": "E3",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-A",
+        "RecordedDay": 2,
+        "BookedDay": 2,
+        "ValueDay": 2,
+        "HoldAmount": 200,
+        "Status": 0
+      },
+      {
+        "Sequence": 10,
+        "SourceId": "E5",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-A",
+        "RecordedDay": 4,
+        "BookedDay": 4,
+        "ValueDay": 4,
+        "HoldAmount": 200,
+        "Status": 1
+      }
+    ],
+    "Results": [
+      {
+        "Sequence": 2,
+        "Input": {
+          "Id": "E1",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Credit",
+          "AccountId": "ACC-001",
+          "Amount": 1200,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 4,
+        "Input": {
+          "Id": "E2",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Debit",
+          "AccountId": "ACC-001",
+          "Amount": 950,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 6,
+        "Input": {
+          "Id": "E3",
+          "BookedDay": 2,
+          "ValueDay": 2,
+          "Kind": "Authorization",
+          "AccountId": "ACC-001",
+          "Amount": 200,
+          "Reference": "Auth-A",
+          "Instalments": 1
+        },
+        "RecordedDay": 2,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 8,
+        "Input": {
+          "Id": "E4",
+          "BookedDay": 3,
+          "ValueDay": 3,
+          "Kind": "Credit",
+          "AccountId": "ACC-001",
+          "Amount": 400,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 3,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 11,
+        "Input": {
+          "Id": "E5",
+          "BookedDay": 4,
+          "ValueDay": 4,
+          "Kind": "Settlement",
+          "AccountId": "ACC-001",
+          "Amount": 185,
+          "Reference": "Auth-A",
+          "Instalments": 1
+        },
+        "RecordedDay": 4,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 12,
+        "Input": {
+          "Id": "E6",
+          "BookedDay": 4,
+          "ValueDay": 4,
+          "Kind": "Settlement",
+          "AccountId": "ACC-001",
+          "Amount": 180,
+          "Reference": "Auth-Z",
+          "Instalments": 1
+        },
+        "RecordedDay": 4,
+        "Accepted": false,
+        "Error": "Unknown authorization."
+      }
+    ],
+    "Fees": [],
+    "Accruals": [],
+    "Balances": [
+      {
+        "Id": "ACC-001",
+        "Available": 465.00,
+        "Current": [
+          {
+            "Sequence": 10,
+            "SourceId": "E5",
+            "AccountId": "ACC-001",
+            "AuthorizationId": "Auth-A",
+            "RecordedDay": 4,
+            "BookedDay": 4,
+            "ValueDay": 4,
+            "HoldAmount": 200,
+            "Status": 1
+          }
+        ],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 2,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 3,
+            "Balance": 650.00,
+            "Basis": 650.00
+          },
+          {
+            "Day": 4,
+            "Balance": 465.00,
+            "Basis": 465.00
+          },
+          {
+            "Day": 5,
+            "Balance": 465.00,
+            "Basis": 465.00
+          },
+          {
+            "Day": 6,
+            "Balance": 465.00,
+            "Basis": 465.00
+          }
+        ]
+      },
+      {
+        "Id": "ACC-002",
+        "Available": 0.000,
+        "Current": [],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 2,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 3,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 4,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 5,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 6,
+            "Balance": 0.000,
+            "Basis": 0.000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "E7",
+    "RecordedDay": 5,
+    "WindowDays": 6,
+    "Accounts": [
+      {
+        "Id": "ACC-001",
+        "Currency": {
+          "Code": "AED",
+          "DecimalPlaces": 2
+        },
+        "OpeningBalance": 0.00
+      },
+      {
+        "Id": "ACC-002",
+        "Currency": {
+          "Code": "BHD",
+          "DecimalPlaces": 3
+        },
+        "OpeningBalance": 0.000
+      }
+    ],
+    "Entries": [
+      {
+        "Sequence": 1,
+        "SourceId": "E1",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": 1200,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 3,
+        "SourceId": "E2",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": -950,
+        "Kind": 1,
+        "Reference": null
+      },
+      {
+        "Sequence": 7,
+        "SourceId": "E4",
+        "AccountId": "ACC-001",
+        "RecordedDay": 3,
+        "ValueDay": 3,
+        "Amount": 400,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 9,
+        "SourceId": "E5",
+        "AccountId": "ACC-001",
+        "RecordedDay": 4,
+        "ValueDay": 4,
+        "Amount": -185,
+        "Kind": 2,
+        "Reference": "Auth-A"
+      },
+      {
+        "Sequence": 13,
+        "SourceId": "E7",
+        "AccountId": "ACC-001",
+        "RecordedDay": 5,
+        "ValueDay": 2,
+        "Amount": -620,
+        "Kind": 1,
+        "Reference": null
+      },
+      {
+        "Sequence": 15,
+        "SourceId": "FEE:ACC-001:2",
+        "AccountId": "ACC-001",
+        "RecordedDay": 5,
+        "ValueDay": 2,
+        "Amount": -25.00,
+        "Kind": 4,
+        "Reference": null
+      },
+      {
+        "Sequence": 16,
+        "SourceId": "FEE:ACC-001:4",
+        "AccountId": "ACC-001",
+        "RecordedDay": 5,
+        "ValueDay": 4,
+        "Amount": -25.00,
+        "Kind": 4,
+        "Reference": null
+      }
+    ],
+    "AuthorizationHistory": [
+      {
+        "Sequence": 5,
+        "SourceId": "E3",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-A",
+        "RecordedDay": 2,
+        "BookedDay": 2,
+        "ValueDay": 2,
+        "HoldAmount": 200,
+        "Status": 0
+      },
+      {
+        "Sequence": 10,
+        "SourceId": "E5",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-A",
+        "RecordedDay": 4,
+        "BookedDay": 4,
+        "ValueDay": 4,
+        "HoldAmount": 200,
+        "Status": 1
+      }
+    ],
+    "Results": [
+      {
+        "Sequence": 2,
+        "Input": {
+          "Id": "E1",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Credit",
+          "AccountId": "ACC-001",
+          "Amount": 1200,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 4,
+        "Input": {
+          "Id": "E2",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Debit",
+          "AccountId": "ACC-001",
+          "Amount": 950,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 6,
+        "Input": {
+          "Id": "E3",
+          "BookedDay": 2,
+          "ValueDay": 2,
+          "Kind": "Authorization",
+          "AccountId": "ACC-001",
+          "Amount": 200,
+          "Reference": "Auth-A",
+          "Instalments": 1
+        },
+        "RecordedDay": 2,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 8,
+        "Input": {
+          "Id": "E4",
+          "BookedDay": 3,
+          "ValueDay": 3,
+          "Kind": "Credit",
+          "AccountId": "ACC-001",
+          "Amount": 400,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 3,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 11,
+        "Input": {
+          "Id": "E5",
+          "BookedDay": 4,
+          "ValueDay": 4,
+          "Kind": "Settlement",
+          "AccountId": "ACC-001",
+          "Amount": 185,
+          "Reference": "Auth-A",
+          "Instalments": 1
+        },
+        "RecordedDay": 4,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 12,
+        "Input": {
+          "Id": "E6",
+          "BookedDay": 4,
+          "ValueDay": 4,
+          "Kind": "Settlement",
+          "AccountId": "ACC-001",
+          "Amount": 180,
+          "Reference": "Auth-Z",
+          "Instalments": 1
+        },
+        "RecordedDay": 4,
+        "Accepted": false,
+        "Error": "Unknown authorization."
+      },
+      {
+        "Sequence": 14,
+        "Input": {
+          "Id": "E7",
+          "BookedDay": 5,
+          "ValueDay": 2,
+          "Kind": "Debit",
+          "AccountId": "ACC-001",
+          "Amount": 620,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 5,
+        "Accepted": true,
+        "Error": null
+      }
+    ],
+    "Fees": [
+      {
+        "AccountId": "ACC-001",
+        "Day": 2,
+        "RecordedDay": 5,
+        "Amount": 25.00
+      },
+      {
+        "AccountId": "ACC-001",
+        "Day": 4,
+        "RecordedDay": 5,
+        "Amount": 25.00
+      }
+    ],
+    "Accruals": [],
+    "Balances": [
+      {
+        "Id": "ACC-001",
+        "Available": -205.00,
+        "Current": [
+          {
+            "Sequence": 10,
+            "SourceId": "E5",
+            "AccountId": "ACC-001",
+            "AuthorizationId": "Auth-A",
+            "RecordedDay": 4,
+            "BookedDay": 4,
+            "ValueDay": 4,
+            "HoldAmount": 200,
+            "Status": 1
+          }
+        ],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 2,
+            "Balance": -395.00,
+            "Basis": -395.00
+          },
+          {
+            "Day": 3,
+            "Balance": 5.00,
+            "Basis": 5.00
+          },
+          {
+            "Day": 4,
+            "Balance": -205.00,
+            "Basis": -205.00
+          },
+          {
+            "Day": 5,
+            "Balance": -205.00,
+            "Basis": -205.00
+          },
+          {
+            "Day": 6,
+            "Balance": -205.00,
+            "Basis": -205.00
+          }
+        ]
+      },
+      {
+        "Id": "ACC-002",
+        "Available": 0.000,
+        "Current": [],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 2,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 3,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 4,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 5,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 6,
+            "Balance": 0.000,
+            "Basis": 0.000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "E8",
+    "RecordedDay": 5,
+    "WindowDays": 6,
+    "Accounts": [
+      {
+        "Id": "ACC-001",
+        "Currency": {
+          "Code": "AED",
+          "DecimalPlaces": 2
+        },
+        "OpeningBalance": 0.00
+      },
+      {
+        "Id": "ACC-002",
+        "Currency": {
+          "Code": "BHD",
+          "DecimalPlaces": 3
+        },
+        "OpeningBalance": 0.000
+      }
+    ],
+    "Entries": [
+      {
+        "Sequence": 1,
+        "SourceId": "E1",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": 1200,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 3,
+        "SourceId": "E2",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": -950,
+        "Kind": 1,
+        "Reference": null
+      },
+      {
+        "Sequence": 7,
+        "SourceId": "E4",
+        "AccountId": "ACC-001",
+        "RecordedDay": 3,
+        "ValueDay": 3,
+        "Amount": 400,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 9,
+        "SourceId": "E5",
+        "AccountId": "ACC-001",
+        "RecordedDay": 4,
+        "ValueDay": 4,
+        "Amount": -185,
+        "Kind": 2,
+        "Reference": "Auth-A"
+      },
+      {
+        "Sequence": 13,
+        "SourceId": "E7",
+        "AccountId": "ACC-001",
+        "RecordedDay": 5,
+        "ValueDay": 2,
+        "Amount": -620,
+        "Kind": 1,
+        "Reference": null
+      },
+      {
+        "Sequence": 15,
+        "SourceId": "FEE:ACC-001:2",
+        "AccountId": "ACC-001",
+        "RecordedDay": 5,
+        "ValueDay": 2,
+        "Amount": -25.00,
+        "Kind": 4,
+        "Reference": null
+      },
+      {
+        "Sequence": 16,
+        "SourceId": "FEE:ACC-001:4",
+        "AccountId": "ACC-001",
+        "RecordedDay": 5,
+        "ValueDay": 4,
+        "Amount": -25.00,
+        "Kind": 4,
+        "Reference": null
+      }
+    ],
+    "AuthorizationHistory": [
+      {
+        "Sequence": 5,
+        "SourceId": "E3",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-A",
+        "RecordedDay": 2,
+        "BookedDay": 2,
+        "ValueDay": 2,
+        "HoldAmount": 200,
+        "Status": 0
+      },
+      {
+        "Sequence": 10,
+        "SourceId": "E5",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-A",
+        "RecordedDay": 4,
+        "BookedDay": 4,
+        "ValueDay": 4,
+        "HoldAmount": 200,
+        "Status": 1
+      },
+      {
+        "Sequence": 17,
+        "SourceId": "E8",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-B",
+        "RecordedDay": 5,
+        "BookedDay": 5,
+        "ValueDay": 5,
+        "HoldAmount": 90,
+        "Status": 3
+      }
+    ],
+    "Results": [
+      {
+        "Sequence": 2,
+        "Input": {
+          "Id": "E1",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Credit",
+          "AccountId": "ACC-001",
+          "Amount": 1200,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 4,
+        "Input": {
+          "Id": "E2",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Debit",
+          "AccountId": "ACC-001",
+          "Amount": 950,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 6,
+        "Input": {
+          "Id": "E3",
+          "BookedDay": 2,
+          "ValueDay": 2,
+          "Kind": "Authorization",
+          "AccountId": "ACC-001",
+          "Amount": 200,
+          "Reference": "Auth-A",
+          "Instalments": 1
+        },
+        "RecordedDay": 2,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 8,
+        "Input": {
+          "Id": "E4",
+          "BookedDay": 3,
+          "ValueDay": 3,
+          "Kind": "Credit",
+          "AccountId": "ACC-001",
+          "Amount": 400,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 3,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 11,
+        "Input": {
+          "Id": "E5",
+          "BookedDay": 4,
+          "ValueDay": 4,
+          "Kind": "Settlement",
+          "AccountId": "ACC-001",
+          "Amount": 185,
+          "Reference": "Auth-A",
+          "Instalments": 1
+        },
+        "RecordedDay": 4,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 12,
+        "Input": {
+          "Id": "E6",
+          "BookedDay": 4,
+          "ValueDay": 4,
+          "Kind": "Settlement",
+          "AccountId": "ACC-001",
+          "Amount": 180,
+          "Reference": "Auth-Z",
+          "Instalments": 1
+        },
+        "RecordedDay": 4,
+        "Accepted": false,
+        "Error": "Unknown authorization."
+      },
+      {
+        "Sequence": 14,
+        "Input": {
+          "Id": "E7",
+          "BookedDay": 5,
+          "ValueDay": 2,
+          "Kind": "Debit",
+          "AccountId": "ACC-001",
+          "Amount": 620,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 5,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 18,
+        "Input": {
+          "Id": "E8",
+          "BookedDay": 5,
+          "ValueDay": 5,
+          "Kind": "Authorization",
+          "AccountId": "ACC-001",
+          "Amount": 90,
+          "Reference": "Auth-B",
+          "Instalments": 1
+        },
+        "RecordedDay": 5,
+        "Accepted": false,
+        "Error": "Insufficient available balance for authorization."
+      }
+    ],
+    "Fees": [
+      {
+        "AccountId": "ACC-001",
+        "Day": 2,
+        "RecordedDay": 5,
+        "Amount": 25.00
+      },
+      {
+        "AccountId": "ACC-001",
+        "Day": 4,
+        "RecordedDay": 5,
+        "Amount": 25.00
+      }
+    ],
+    "Accruals": [],
+    "Balances": [
+      {
+        "Id": "ACC-001",
+        "Available": -205.00,
+        "Current": [
+          {
+            "Sequence": 10,
+            "SourceId": "E5",
+            "AccountId": "ACC-001",
+            "AuthorizationId": "Auth-A",
+            "RecordedDay": 4,
+            "BookedDay": 4,
+            "ValueDay": 4,
+            "HoldAmount": 200,
+            "Status": 1
+          },
+          {
+            "Sequence": 17,
+            "SourceId": "E8",
+            "AccountId": "ACC-001",
+            "AuthorizationId": "Auth-B",
+            "RecordedDay": 5,
+            "BookedDay": 5,
+            "ValueDay": 5,
+            "HoldAmount": 90,
+            "Status": 3
+          }
+        ],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 2,
+            "Balance": -395.00,
+            "Basis": -395.00
+          },
+          {
+            "Day": 3,
+            "Balance": 5.00,
+            "Basis": 5.00
+          },
+          {
+            "Day": 4,
+            "Balance": -205.00,
+            "Basis": -205.00
+          },
+          {
+            "Day": 5,
+            "Balance": -205.00,
+            "Basis": -205.00
+          },
+          {
+            "Day": 6,
+            "Balance": -205.00,
+            "Basis": -205.00
+          }
+        ]
+      },
+      {
+        "Id": "ACC-002",
+        "Available": 0.000,
+        "Current": [],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 2,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 3,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 4,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 5,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 6,
+            "Balance": 0.000,
+            "Basis": 0.000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "E9",
+    "RecordedDay": 6,
+    "WindowDays": 6,
+    "Accounts": [
+      {
+        "Id": "ACC-001",
+        "Currency": {
+          "Code": "AED",
+          "DecimalPlaces": 2
+        },
+        "OpeningBalance": 0.00
+      },
+      {
+        "Id": "ACC-002",
+        "Currency": {
+          "Code": "BHD",
+          "DecimalPlaces": 3
+        },
+        "OpeningBalance": 0.000
+      }
+    ],
+    "Entries": [
+      {
+        "Sequence": 1,
+        "SourceId": "E1",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": 1200,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 3,
+        "SourceId": "E2",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": -950,
+        "Kind": 1,
+        "Reference": null
+      },
+      {
+        "Sequence": 7,
+        "SourceId": "E4",
+        "AccountId": "ACC-001",
+        "RecordedDay": 3,
+        "ValueDay": 3,
+        "Amount": 400,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 9,
+        "SourceId": "E5",
+        "AccountId": "ACC-001",
+        "RecordedDay": 4,
+        "ValueDay": 4,
+        "Amount": -185,
+        "Kind": 2,
+        "Reference": "Auth-A"
+      },
+      {
+        "Sequence": 13,
+        "SourceId": "E7",
+        "AccountId": "ACC-001",
+        "RecordedDay": 5,
+        "ValueDay": 2,
+        "Amount": -620,
+        "Kind": 1,
+        "Reference": null
+      },
+      {
+        "Sequence": 15,
+        "SourceId": "FEE:ACC-001:2",
+        "AccountId": "ACC-001",
+        "RecordedDay": 5,
+        "ValueDay": 2,
+        "Amount": -25.00,
+        "Kind": 4,
+        "Reference": null
+      },
+      {
+        "Sequence": 16,
+        "SourceId": "FEE:ACC-001:4",
+        "AccountId": "ACC-001",
+        "RecordedDay": 5,
+        "ValueDay": 4,
+        "Amount": -25.00,
+        "Kind": 4,
+        "Reference": null
+      },
+      {
+        "Sequence": 19,
+        "SourceId": "FEE:ACC-001:5",
+        "AccountId": "ACC-001",
+        "RecordedDay": 6,
+        "ValueDay": 5,
+        "Amount": -25.00,
+        "Kind": 4,
+        "Reference": null
+      },
+      {
+        "Sequence": 20,
+        "SourceId": "E9",
+        "AccountId": "ACC-001",
+        "RecordedDay": 6,
+        "ValueDay": 2,
+        "Amount": 620,
+        "Kind": 3,
+        "Reference": "E7"
+      }
+    ],
+    "AuthorizationHistory": [
+      {
+        "Sequence": 5,
+        "SourceId": "E3",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-A",
+        "RecordedDay": 2,
+        "BookedDay": 2,
+        "ValueDay": 2,
+        "HoldAmount": 200,
+        "Status": 0
+      },
+      {
+        "Sequence": 10,
+        "SourceId": "E5",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-A",
+        "RecordedDay": 4,
+        "BookedDay": 4,
+        "ValueDay": 4,
+        "HoldAmount": 200,
+        "Status": 1
+      },
+      {
+        "Sequence": 17,
+        "SourceId": "E8",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-B",
+        "RecordedDay": 5,
+        "BookedDay": 5,
+        "ValueDay": 5,
+        "HoldAmount": 90,
+        "Status": 3
+      }
+    ],
+    "Results": [
+      {
+        "Sequence": 2,
+        "Input": {
+          "Id": "E1",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Credit",
+          "AccountId": "ACC-001",
+          "Amount": 1200,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 4,
+        "Input": {
+          "Id": "E2",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Debit",
+          "AccountId": "ACC-001",
+          "Amount": 950,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 6,
+        "Input": {
+          "Id": "E3",
+          "BookedDay": 2,
+          "ValueDay": 2,
+          "Kind": "Authorization",
+          "AccountId": "ACC-001",
+          "Amount": 200,
+          "Reference": "Auth-A",
+          "Instalments": 1
+        },
+        "RecordedDay": 2,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 8,
+        "Input": {
+          "Id": "E4",
+          "BookedDay": 3,
+          "ValueDay": 3,
+          "Kind": "Credit",
+          "AccountId": "ACC-001",
+          "Amount": 400,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 3,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 11,
+        "Input": {
+          "Id": "E5",
+          "BookedDay": 4,
+          "ValueDay": 4,
+          "Kind": "Settlement",
+          "AccountId": "ACC-001",
+          "Amount": 185,
+          "Reference": "Auth-A",
+          "Instalments": 1
+        },
+        "RecordedDay": 4,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 12,
+        "Input": {
+          "Id": "E6",
+          "BookedDay": 4,
+          "ValueDay": 4,
+          "Kind": "Settlement",
+          "AccountId": "ACC-001",
+          "Amount": 180,
+          "Reference": "Auth-Z",
+          "Instalments": 1
+        },
+        "RecordedDay": 4,
+        "Accepted": false,
+        "Error": "Unknown authorization."
+      },
+      {
+        "Sequence": 14,
+        "Input": {
+          "Id": "E7",
+          "BookedDay": 5,
+          "ValueDay": 2,
+          "Kind": "Debit",
+          "AccountId": "ACC-001",
+          "Amount": 620,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 5,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 18,
+        "Input": {
+          "Id": "E8",
+          "BookedDay": 5,
+          "ValueDay": 5,
+          "Kind": "Authorization",
+          "AccountId": "ACC-001",
+          "Amount": 90,
+          "Reference": "Auth-B",
+          "Instalments": 1
+        },
+        "RecordedDay": 5,
+        "Accepted": false,
+        "Error": "Insufficient available balance for authorization."
+      },
+      {
+        "Sequence": 21,
+        "Input": {
+          "Id": "E9",
+          "BookedDay": 6,
+          "ValueDay": 2,
+          "Kind": "Reversal",
+          "AccountId": "ACC-001",
+          "Amount": 0,
+          "Reference": "E7",
+          "Instalments": 1
+        },
+        "RecordedDay": 6,
+        "Accepted": true,
+        "Error": null
+      }
+    ],
+    "Fees": [
+      {
+        "AccountId": "ACC-001",
+        "Day": 2,
+        "RecordedDay": 5,
+        "Amount": 25.00
+      },
+      {
+        "AccountId": "ACC-001",
+        "Day": 4,
+        "RecordedDay": 5,
+        "Amount": 25.00
+      },
+      {
+        "AccountId": "ACC-001",
+        "Day": 5,
+        "RecordedDay": 6,
+        "Amount": 25.00
+      }
+    ],
+    "Accruals": [],
+    "Balances": [
+      {
+        "Id": "ACC-001",
+        "Available": 390.00,
+        "Current": [
+          {
+            "Sequence": 10,
+            "SourceId": "E5",
+            "AccountId": "ACC-001",
+            "AuthorizationId": "Auth-A",
+            "RecordedDay": 4,
+            "BookedDay": 4,
+            "ValueDay": 4,
+            "HoldAmount": 200,
+            "Status": 1
+          },
+          {
+            "Sequence": 17,
+            "SourceId": "E8",
+            "AccountId": "ACC-001",
+            "AuthorizationId": "Auth-B",
+            "RecordedDay": 5,
+            "BookedDay": 5,
+            "ValueDay": 5,
+            "HoldAmount": 90,
+            "Status": 3
+          }
+        ],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 2,
+            "Balance": 225.00,
+            "Basis": 225.00
+          },
+          {
+            "Day": 3,
+            "Balance": 625.00,
+            "Basis": 625.00
+          },
+          {
+            "Day": 4,
+            "Balance": 415.00,
+            "Basis": 415.00
+          },
+          {
+            "Day": 5,
+            "Balance": 390.00,
+            "Basis": 390.00
+          },
+          {
+            "Day": 6,
+            "Balance": 390.00,
+            "Basis": 390.00
+          }
+        ]
+      },
+      {
+        "Id": "ACC-002",
+        "Available": 0.000,
+        "Current": [],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 2,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 3,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 4,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 5,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 6,
+            "Balance": 0.000,
+            "Basis": 0.000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "E10",
+    "RecordedDay": 6,
+    "WindowDays": 6,
+    "Accounts": [
+      {
+        "Id": "ACC-001",
+        "Currency": {
+          "Code": "AED",
+          "DecimalPlaces": 2
+        },
+        "OpeningBalance": 0.00
+      },
+      {
+        "Id": "ACC-002",
+        "Currency": {
+          "Code": "BHD",
+          "DecimalPlaces": 3
+        },
+        "OpeningBalance": 0.000
+      }
+    ],
+    "Entries": [
+      {
+        "Sequence": 1,
+        "SourceId": "E1",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": 1200,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 3,
+        "SourceId": "E2",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": -950,
+        "Kind": 1,
+        "Reference": null
+      },
+      {
+        "Sequence": 7,
+        "SourceId": "E4",
+        "AccountId": "ACC-001",
+        "RecordedDay": 3,
+        "ValueDay": 3,
+        "Amount": 400,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 9,
+        "SourceId": "E5",
+        "AccountId": "ACC-001",
+        "RecordedDay": 4,
+        "ValueDay": 4,
+        "Amount": -185,
+        "Kind": 2,
+        "Reference": "Auth-A"
+      },
+      {
+        "Sequence": 13,
+        "SourceId": "E7",
+        "AccountId": "ACC-001",
+        "RecordedDay": 5,
+        "ValueDay": 2,
+        "Amount": -620,
+        "Kind": 1,
+        "Reference": null
+      },
+      {
+        "Sequence": 15,
+        "SourceId": "FEE:ACC-001:2",
+        "AccountId": "ACC-001",
+        "RecordedDay": 5,
+        "ValueDay": 2,
+        "Amount": -25.00,
+        "Kind": 4,
+        "Reference": null
+      },
+      {
+        "Sequence": 16,
+        "SourceId": "FEE:ACC-001:4",
+        "AccountId": "ACC-001",
+        "RecordedDay": 5,
+        "ValueDay": 4,
+        "Amount": -25.00,
+        "Kind": 4,
+        "Reference": null
+      },
+      {
+        "Sequence": 19,
+        "SourceId": "FEE:ACC-001:5",
+        "AccountId": "ACC-001",
+        "RecordedDay": 6,
+        "ValueDay": 5,
+        "Amount": -25.00,
+        "Kind": 4,
+        "Reference": null
+      },
+      {
+        "Sequence": 20,
+        "SourceId": "E9",
+        "AccountId": "ACC-001",
+        "RecordedDay": 6,
+        "ValueDay": 2,
+        "Amount": 620,
+        "Kind": 3,
+        "Reference": "E7"
+      },
+      {
+        "Sequence": 22,
+        "SourceId": "E10",
+        "AccountId": "ACC-002",
+        "RecordedDay": 6,
+        "ValueDay": 5,
+        "Amount": 3.334,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 23,
+        "SourceId": "E10",
+        "AccountId": "ACC-002",
+        "RecordedDay": 6,
+        "ValueDay": 5,
+        "Amount": 3.333,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 24,
+        "SourceId": "E10",
+        "AccountId": "ACC-002",
+        "RecordedDay": 6,
+        "ValueDay": 5,
+        "Amount": 3.333,
+        "Kind": 0,
+        "Reference": null
+      }
+    ],
+    "AuthorizationHistory": [
+      {
+        "Sequence": 5,
+        "SourceId": "E3",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-A",
+        "RecordedDay": 2,
+        "BookedDay": 2,
+        "ValueDay": 2,
+        "HoldAmount": 200,
+        "Status": 0
+      },
+      {
+        "Sequence": 10,
+        "SourceId": "E5",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-A",
+        "RecordedDay": 4,
+        "BookedDay": 4,
+        "ValueDay": 4,
+        "HoldAmount": 200,
+        "Status": 1
+      },
+      {
+        "Sequence": 17,
+        "SourceId": "E8",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-B",
+        "RecordedDay": 5,
+        "BookedDay": 5,
+        "ValueDay": 5,
+        "HoldAmount": 90,
+        "Status": 3
+      }
+    ],
+    "Results": [
+      {
+        "Sequence": 2,
+        "Input": {
+          "Id": "E1",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Credit",
+          "AccountId": "ACC-001",
+          "Amount": 1200,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 4,
+        "Input": {
+          "Id": "E2",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Debit",
+          "AccountId": "ACC-001",
+          "Amount": 950,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 6,
+        "Input": {
+          "Id": "E3",
+          "BookedDay": 2,
+          "ValueDay": 2,
+          "Kind": "Authorization",
+          "AccountId": "ACC-001",
+          "Amount": 200,
+          "Reference": "Auth-A",
+          "Instalments": 1
+        },
+        "RecordedDay": 2,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 8,
+        "Input": {
+          "Id": "E4",
+          "BookedDay": 3,
+          "ValueDay": 3,
+          "Kind": "Credit",
+          "AccountId": "ACC-001",
+          "Amount": 400,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 3,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 11,
+        "Input": {
+          "Id": "E5",
+          "BookedDay": 4,
+          "ValueDay": 4,
+          "Kind": "Settlement",
+          "AccountId": "ACC-001",
+          "Amount": 185,
+          "Reference": "Auth-A",
+          "Instalments": 1
+        },
+        "RecordedDay": 4,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 12,
+        "Input": {
+          "Id": "E6",
+          "BookedDay": 4,
+          "ValueDay": 4,
+          "Kind": "Settlement",
+          "AccountId": "ACC-001",
+          "Amount": 180,
+          "Reference": "Auth-Z",
+          "Instalments": 1
+        },
+        "RecordedDay": 4,
+        "Accepted": false,
+        "Error": "Unknown authorization."
+      },
+      {
+        "Sequence": 14,
+        "Input": {
+          "Id": "E7",
+          "BookedDay": 5,
+          "ValueDay": 2,
+          "Kind": "Debit",
+          "AccountId": "ACC-001",
+          "Amount": 620,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 5,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 18,
+        "Input": {
+          "Id": "E8",
+          "BookedDay": 5,
+          "ValueDay": 5,
+          "Kind": "Authorization",
+          "AccountId": "ACC-001",
+          "Amount": 90,
+          "Reference": "Auth-B",
+          "Instalments": 1
+        },
+        "RecordedDay": 5,
+        "Accepted": false,
+        "Error": "Insufficient available balance for authorization."
+      },
+      {
+        "Sequence": 21,
+        "Input": {
+          "Id": "E9",
+          "BookedDay": 6,
+          "ValueDay": 2,
+          "Kind": "Reversal",
+          "AccountId": "ACC-001",
+          "Amount": 0,
+          "Reference": "E7",
+          "Instalments": 1
+        },
+        "RecordedDay": 6,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 25,
+        "Input": {
+          "Id": "E10",
+          "BookedDay": 5,
+          "ValueDay": 5,
+          "Kind": "Credit",
+          "AccountId": "ACC-002",
+          "Amount": 10.000,
+          "Reference": null,
+          "Instalments": 3
+        },
+        "RecordedDay": 6,
+        "Accepted": true,
+        "Error": null
+      }
+    ],
+    "Fees": [
+      {
+        "AccountId": "ACC-001",
+        "Day": 2,
+        "RecordedDay": 5,
+        "Amount": 25.00
+      },
+      {
+        "AccountId": "ACC-001",
+        "Day": 4,
+        "RecordedDay": 5,
+        "Amount": 25.00
+      },
+      {
+        "AccountId": "ACC-001",
+        "Day": 5,
+        "RecordedDay": 6,
+        "Amount": 25.00
+      }
+    ],
+    "Accruals": [],
+    "Balances": [
+      {
+        "Id": "ACC-001",
+        "Available": 390.00,
+        "Current": [
+          {
+            "Sequence": 10,
+            "SourceId": "E5",
+            "AccountId": "ACC-001",
+            "AuthorizationId": "Auth-A",
+            "RecordedDay": 4,
+            "BookedDay": 4,
+            "ValueDay": 4,
+            "HoldAmount": 200,
+            "Status": 1
+          },
+          {
+            "Sequence": 17,
+            "SourceId": "E8",
+            "AccountId": "ACC-001",
+            "AuthorizationId": "Auth-B",
+            "RecordedDay": 5,
+            "BookedDay": 5,
+            "ValueDay": 5,
+            "HoldAmount": 90,
+            "Status": 3
+          }
+        ],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 2,
+            "Balance": 225.00,
+            "Basis": 225.00
+          },
+          {
+            "Day": 3,
+            "Balance": 625.00,
+            "Basis": 625.00
+          },
+          {
+            "Day": 4,
+            "Balance": 415.00,
+            "Basis": 415.00
+          },
+          {
+            "Day": 5,
+            "Balance": 390.00,
+            "Basis": 390.00
+          },
+          {
+            "Day": 6,
+            "Balance": 390.00,
+            "Basis": 390.00
+          }
+        ]
+      },
+      {
+        "Id": "ACC-002",
+        "Available": 10.000,
+        "Current": [],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 2,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 3,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 4,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 5,
+            "Balance": 10.000,
+            "Basis": 10.000
+          },
+          {
+            "Day": 6,
+            "Balance": 10.000,
+            "Basis": 10.000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "finished",
+    "RecordedDay": 6,
+    "WindowDays": 6,
+    "Accounts": [
+      {
+        "Id": "ACC-001",
+        "Currency": {
+          "Code": "AED",
+          "DecimalPlaces": 2
+        },
+        "OpeningBalance": 0.00
+      },
+      {
+        "Id": "ACC-002",
+        "Currency": {
+          "Code": "BHD",
+          "DecimalPlaces": 3
+        },
+        "OpeningBalance": 0.000
+      }
+    ],
+    "Entries": [
+      {
+        "Sequence": 1,
+        "SourceId": "E1",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": 1200,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 3,
+        "SourceId": "E2",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": -950,
+        "Kind": 1,
+        "Reference": null
+      },
+      {
+        "Sequence": 7,
+        "SourceId": "E4",
+        "AccountId": "ACC-001",
+        "RecordedDay": 3,
+        "ValueDay": 3,
+        "Amount": 400,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 9,
+        "SourceId": "E5",
+        "AccountId": "ACC-001",
+        "RecordedDay": 4,
+        "ValueDay": 4,
+        "Amount": -185,
+        "Kind": 2,
+        "Reference": "Auth-A"
+      },
+      {
+        "Sequence": 13,
+        "SourceId": "E7",
+        "AccountId": "ACC-001",
+        "RecordedDay": 5,
+        "ValueDay": 2,
+        "Amount": -620,
+        "Kind": 1,
+        "Reference": null
+      },
+      {
+        "Sequence": 15,
+        "SourceId": "FEE:ACC-001:2",
+        "AccountId": "ACC-001",
+        "RecordedDay": 5,
+        "ValueDay": 2,
+        "Amount": -25.00,
+        "Kind": 4,
+        "Reference": null
+      },
+      {
+        "Sequence": 16,
+        "SourceId": "FEE:ACC-001:4",
+        "AccountId": "ACC-001",
+        "RecordedDay": 5,
+        "ValueDay": 4,
+        "Amount": -25.00,
+        "Kind": 4,
+        "Reference": null
+      },
+      {
+        "Sequence": 19,
+        "SourceId": "FEE:ACC-001:5",
+        "AccountId": "ACC-001",
+        "RecordedDay": 6,
+        "ValueDay": 5,
+        "Amount": -25.00,
+        "Kind": 4,
+        "Reference": null
+      },
+      {
+        "Sequence": 20,
+        "SourceId": "E9",
+        "AccountId": "ACC-001",
+        "RecordedDay": 6,
+        "ValueDay": 2,
+        "Amount": 620,
+        "Kind": 3,
+        "Reference": "E7"
+      },
+      {
+        "Sequence": 22,
+        "SourceId": "E10",
+        "AccountId": "ACC-002",
+        "RecordedDay": 6,
+        "ValueDay": 5,
+        "Amount": 3.334,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 23,
+        "SourceId": "E10",
+        "AccountId": "ACC-002",
+        "RecordedDay": 6,
+        "ValueDay": 5,
+        "Amount": 3.333,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 24,
+        "SourceId": "E10",
+        "AccountId": "ACC-002",
+        "RecordedDay": 6,
+        "ValueDay": 5,
+        "Amount": 3.333,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 26,
+        "SourceId": "INTEREST:ACC-001",
+        "AccountId": "ACC-001",
+        "RecordedDay": 6,
+        "ValueDay": 6,
+        "Amount": 0.93,
+        "Kind": 5,
+        "Reference": null
+      },
+      {
+        "Sequence": 27,
+        "SourceId": "INTEREST:ACC-002",
+        "AccountId": "ACC-002",
+        "RecordedDay": 6,
+        "ValueDay": 6,
+        "Amount": 0.008,
+        "Kind": 5,
+        "Reference": null
+      }
+    ],
+    "AuthorizationHistory": [
+      {
+        "Sequence": 5,
+        "SourceId": "E3",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-A",
+        "RecordedDay": 2,
+        "BookedDay": 2,
+        "ValueDay": 2,
+        "HoldAmount": 200,
+        "Status": 0
+      },
+      {
+        "Sequence": 10,
+        "SourceId": "E5",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-A",
+        "RecordedDay": 4,
+        "BookedDay": 4,
+        "ValueDay": 4,
+        "HoldAmount": 200,
+        "Status": 1
+      },
+      {
+        "Sequence": 17,
+        "SourceId": "E8",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-B",
+        "RecordedDay": 5,
+        "BookedDay": 5,
+        "ValueDay": 5,
+        "HoldAmount": 90,
+        "Status": 3
+      }
+    ],
+    "Results": [
+      {
+        "Sequence": 2,
+        "Input": {
+          "Id": "E1",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Credit",
+          "AccountId": "ACC-001",
+          "Amount": 1200,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 4,
+        "Input": {
+          "Id": "E2",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Debit",
+          "AccountId": "ACC-001",
+          "Amount": 950,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 6,
+        "Input": {
+          "Id": "E3",
+          "BookedDay": 2,
+          "ValueDay": 2,
+          "Kind": "Authorization",
+          "AccountId": "ACC-001",
+          "Amount": 200,
+          "Reference": "Auth-A",
+          "Instalments": 1
+        },
+        "RecordedDay": 2,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 8,
+        "Input": {
+          "Id": "E4",
+          "BookedDay": 3,
+          "ValueDay": 3,
+          "Kind": "Credit",
+          "AccountId": "ACC-001",
+          "Amount": 400,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 3,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 11,
+        "Input": {
+          "Id": "E5",
+          "BookedDay": 4,
+          "ValueDay": 4,
+          "Kind": "Settlement",
+          "AccountId": "ACC-001",
+          "Amount": 185,
+          "Reference": "Auth-A",
+          "Instalments": 1
+        },
+        "RecordedDay": 4,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 12,
+        "Input": {
+          "Id": "E6",
+          "BookedDay": 4,
+          "ValueDay": 4,
+          "Kind": "Settlement",
+          "AccountId": "ACC-001",
+          "Amount": 180,
+          "Reference": "Auth-Z",
+          "Instalments": 1
+        },
+        "RecordedDay": 4,
+        "Accepted": false,
+        "Error": "Unknown authorization."
+      },
+      {
+        "Sequence": 14,
+        "Input": {
+          "Id": "E7",
+          "BookedDay": 5,
+          "ValueDay": 2,
+          "Kind": "Debit",
+          "AccountId": "ACC-001",
+          "Amount": 620,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 5,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 18,
+        "Input": {
+          "Id": "E8",
+          "BookedDay": 5,
+          "ValueDay": 5,
+          "Kind": "Authorization",
+          "AccountId": "ACC-001",
+          "Amount": 90,
+          "Reference": "Auth-B",
+          "Instalments": 1
+        },
+        "RecordedDay": 5,
+        "Accepted": false,
+        "Error": "Insufficient available balance for authorization."
+      },
+      {
+        "Sequence": 21,
+        "Input": {
+          "Id": "E9",
+          "BookedDay": 6,
+          "ValueDay": 2,
+          "Kind": "Reversal",
+          "AccountId": "ACC-001",
+          "Amount": 0,
+          "Reference": "E7",
+          "Instalments": 1
+        },
+        "RecordedDay": 6,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 25,
+        "Input": {
+          "Id": "E10",
+          "BookedDay": 5,
+          "ValueDay": 5,
+          "Kind": "Credit",
+          "AccountId": "ACC-002",
+          "Amount": 10.000,
+          "Reference": null,
+          "Instalments": 3
+        },
+        "RecordedDay": 6,
+        "Accepted": true,
+        "Error": null
+      }
+    ],
+    "Fees": [
+      {
+        "AccountId": "ACC-001",
+        "Day": 2,
+        "RecordedDay": 5,
+        "Amount": 25.00
+      },
+      {
+        "AccountId": "ACC-001",
+        "Day": 4,
+        "RecordedDay": 5,
+        "Amount": 25.00
+      },
+      {
+        "AccountId": "ACC-001",
+        "Day": 5,
+        "RecordedDay": 6,
+        "Amount": 25.00
+      }
+    ],
+    "Accruals": [
+      {
+        "AccountId": "ACC-001",
+        "Day": 1,
+        "Basis": 250.00,
+        "Amount": 0.10
+      },
+      {
+        "AccountId": "ACC-001",
+        "Day": 2,
+        "Basis": 225.00,
+        "Amount": 0.09
+      },
+      {
+        "AccountId": "ACC-001",
+        "Day": 3,
+        "Basis": 625.00,
+        "Amount": 0.25
+      },
+      {
+        "AccountId": "ACC-001",
+        "Day": 4,
+        "Basis": 415.00,
+        "Amount": 0.17
+      },
+      {
+        "AccountId": "ACC-001",
+        "Day": 5,
+        "Basis": 390.00,
+        "Amount": 0.16
+      },
+      {
+        "AccountId": "ACC-001",
+        "Day": 6,
+        "Basis": 390.00,
+        "Amount": 0.16
+      },
+      {
+        "AccountId": "ACC-002",
+        "Day": 1,
+        "Basis": 0.000,
+        "Amount": 0
+      },
+      {
+        "AccountId": "ACC-002",
+        "Day": 2,
+        "Basis": 0.000,
+        "Amount": 0
+      },
+      {
+        "AccountId": "ACC-002",
+        "Day": 3,
+        "Basis": 0.000,
+        "Amount": 0
+      },
+      {
+        "AccountId": "ACC-002",
+        "Day": 4,
+        "Basis": 0.000,
+        "Amount": 0
+      },
+      {
+        "AccountId": "ACC-002",
+        "Day": 5,
+        "Basis": 10.000,
+        "Amount": 0.004
+      },
+      {
+        "AccountId": "ACC-002",
+        "Day": 6,
+        "Basis": 10.000,
+        "Amount": 0.004
+      }
+    ],
+    "Balances": [
+      {
+        "Id": "ACC-001",
+        "Available": 390.93,
+        "Current": [
+          {
+            "Sequence": 10,
+            "SourceId": "E5",
+            "AccountId": "ACC-001",
+            "AuthorizationId": "Auth-A",
+            "RecordedDay": 4,
+            "BookedDay": 4,
+            "ValueDay": 4,
+            "HoldAmount": 200,
+            "Status": 1
+          },
+          {
+            "Sequence": 17,
+            "SourceId": "E8",
+            "AccountId": "ACC-001",
+            "AuthorizationId": "Auth-B",
+            "RecordedDay": 5,
+            "BookedDay": 5,
+            "ValueDay": 5,
+            "HoldAmount": 90,
+            "Status": 3
+          }
+        ],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 2,
+            "Balance": 225.00,
+            "Basis": 225.00
+          },
+          {
+            "Day": 3,
+            "Balance": 625.00,
+            "Basis": 625.00
+          },
+          {
+            "Day": 4,
+            "Balance": 415.00,
+            "Basis": 415.00
+          },
+          {
+            "Day": 5,
+            "Balance": 390.00,
+            "Basis": 390.00
+          },
+          {
+            "Day": 6,
+            "Balance": 390.93,
+            "Basis": 390.00
+          }
+        ]
+      },
+      {
+        "Id": "ACC-002",
+        "Available": 10.008,
+        "Current": [],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 2,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 3,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 4,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 5,
+            "Balance": 10.000,
+            "Basis": 10.000
+          },
+          {
+            "Day": 6,
+            "Balance": 10.008,
+            "Basis": 10.000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "finish-and-input-retries",
+    "RecordedDay": 6,
+    "WindowDays": 6,
+    "Accounts": [
+      {
+        "Id": "ACC-001",
+        "Currency": {
+          "Code": "AED",
+          "DecimalPlaces": 2
+        },
+        "OpeningBalance": 0.00
+      },
+      {
+        "Id": "ACC-002",
+        "Currency": {
+          "Code": "BHD",
+          "DecimalPlaces": 3
+        },
+        "OpeningBalance": 0.000
+      }
+    ],
+    "Entries": [
+      {
+        "Sequence": 1,
+        "SourceId": "E1",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": 1200,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 3,
+        "SourceId": "E2",
+        "AccountId": "ACC-001",
+        "RecordedDay": 1,
+        "ValueDay": 1,
+        "Amount": -950,
+        "Kind": 1,
+        "Reference": null
+      },
+      {
+        "Sequence": 7,
+        "SourceId": "E4",
+        "AccountId": "ACC-001",
+        "RecordedDay": 3,
+        "ValueDay": 3,
+        "Amount": 400,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 9,
+        "SourceId": "E5",
+        "AccountId": "ACC-001",
+        "RecordedDay": 4,
+        "ValueDay": 4,
+        "Amount": -185,
+        "Kind": 2,
+        "Reference": "Auth-A"
+      },
+      {
+        "Sequence": 13,
+        "SourceId": "E7",
+        "AccountId": "ACC-001",
+        "RecordedDay": 5,
+        "ValueDay": 2,
+        "Amount": -620,
+        "Kind": 1,
+        "Reference": null
+      },
+      {
+        "Sequence": 15,
+        "SourceId": "FEE:ACC-001:2",
+        "AccountId": "ACC-001",
+        "RecordedDay": 5,
+        "ValueDay": 2,
+        "Amount": -25.00,
+        "Kind": 4,
+        "Reference": null
+      },
+      {
+        "Sequence": 16,
+        "SourceId": "FEE:ACC-001:4",
+        "AccountId": "ACC-001",
+        "RecordedDay": 5,
+        "ValueDay": 4,
+        "Amount": -25.00,
+        "Kind": 4,
+        "Reference": null
+      },
+      {
+        "Sequence": 19,
+        "SourceId": "FEE:ACC-001:5",
+        "AccountId": "ACC-001",
+        "RecordedDay": 6,
+        "ValueDay": 5,
+        "Amount": -25.00,
+        "Kind": 4,
+        "Reference": null
+      },
+      {
+        "Sequence": 20,
+        "SourceId": "E9",
+        "AccountId": "ACC-001",
+        "RecordedDay": 6,
+        "ValueDay": 2,
+        "Amount": 620,
+        "Kind": 3,
+        "Reference": "E7"
+      },
+      {
+        "Sequence": 22,
+        "SourceId": "E10",
+        "AccountId": "ACC-002",
+        "RecordedDay": 6,
+        "ValueDay": 5,
+        "Amount": 3.334,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 23,
+        "SourceId": "E10",
+        "AccountId": "ACC-002",
+        "RecordedDay": 6,
+        "ValueDay": 5,
+        "Amount": 3.333,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 24,
+        "SourceId": "E10",
+        "AccountId": "ACC-002",
+        "RecordedDay": 6,
+        "ValueDay": 5,
+        "Amount": 3.333,
+        "Kind": 0,
+        "Reference": null
+      },
+      {
+        "Sequence": 26,
+        "SourceId": "INTEREST:ACC-001",
+        "AccountId": "ACC-001",
+        "RecordedDay": 6,
+        "ValueDay": 6,
+        "Amount": 0.93,
+        "Kind": 5,
+        "Reference": null
+      },
+      {
+        "Sequence": 27,
+        "SourceId": "INTEREST:ACC-002",
+        "AccountId": "ACC-002",
+        "RecordedDay": 6,
+        "ValueDay": 6,
+        "Amount": 0.008,
+        "Kind": 5,
+        "Reference": null
+      }
+    ],
+    "AuthorizationHistory": [
+      {
+        "Sequence": 5,
+        "SourceId": "E3",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-A",
+        "RecordedDay": 2,
+        "BookedDay": 2,
+        "ValueDay": 2,
+        "HoldAmount": 200,
+        "Status": 0
+      },
+      {
+        "Sequence": 10,
+        "SourceId": "E5",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-A",
+        "RecordedDay": 4,
+        "BookedDay": 4,
+        "ValueDay": 4,
+        "HoldAmount": 200,
+        "Status": 1
+      },
+      {
+        "Sequence": 17,
+        "SourceId": "E8",
+        "AccountId": "ACC-001",
+        "AuthorizationId": "Auth-B",
+        "RecordedDay": 5,
+        "BookedDay": 5,
+        "ValueDay": 5,
+        "HoldAmount": 90,
+        "Status": 3
+      }
+    ],
+    "Results": [
+      {
+        "Sequence": 2,
+        "Input": {
+          "Id": "E1",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Credit",
+          "AccountId": "ACC-001",
+          "Amount": 1200,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 4,
+        "Input": {
+          "Id": "E2",
+          "BookedDay": 1,
+          "ValueDay": 1,
+          "Kind": "Debit",
+          "AccountId": "ACC-001",
+          "Amount": 950,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 1,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 6,
+        "Input": {
+          "Id": "E3",
+          "BookedDay": 2,
+          "ValueDay": 2,
+          "Kind": "Authorization",
+          "AccountId": "ACC-001",
+          "Amount": 200,
+          "Reference": "Auth-A",
+          "Instalments": 1
+        },
+        "RecordedDay": 2,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 8,
+        "Input": {
+          "Id": "E4",
+          "BookedDay": 3,
+          "ValueDay": 3,
+          "Kind": "Credit",
+          "AccountId": "ACC-001",
+          "Amount": 400,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 3,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 11,
+        "Input": {
+          "Id": "E5",
+          "BookedDay": 4,
+          "ValueDay": 4,
+          "Kind": "Settlement",
+          "AccountId": "ACC-001",
+          "Amount": 185,
+          "Reference": "Auth-A",
+          "Instalments": 1
+        },
+        "RecordedDay": 4,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 12,
+        "Input": {
+          "Id": "E6",
+          "BookedDay": 4,
+          "ValueDay": 4,
+          "Kind": "Settlement",
+          "AccountId": "ACC-001",
+          "Amount": 180,
+          "Reference": "Auth-Z",
+          "Instalments": 1
+        },
+        "RecordedDay": 4,
+        "Accepted": false,
+        "Error": "Unknown authorization."
+      },
+      {
+        "Sequence": 14,
+        "Input": {
+          "Id": "E7",
+          "BookedDay": 5,
+          "ValueDay": 2,
+          "Kind": "Debit",
+          "AccountId": "ACC-001",
+          "Amount": 620,
+          "Reference": null,
+          "Instalments": 1
+        },
+        "RecordedDay": 5,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 18,
+        "Input": {
+          "Id": "E8",
+          "BookedDay": 5,
+          "ValueDay": 5,
+          "Kind": "Authorization",
+          "AccountId": "ACC-001",
+          "Amount": 90,
+          "Reference": "Auth-B",
+          "Instalments": 1
+        },
+        "RecordedDay": 5,
+        "Accepted": false,
+        "Error": "Insufficient available balance for authorization."
+      },
+      {
+        "Sequence": 21,
+        "Input": {
+          "Id": "E9",
+          "BookedDay": 6,
+          "ValueDay": 2,
+          "Kind": "Reversal",
+          "AccountId": "ACC-001",
+          "Amount": 0,
+          "Reference": "E7",
+          "Instalments": 1
+        },
+        "RecordedDay": 6,
+        "Accepted": true,
+        "Error": null
+      },
+      {
+        "Sequence": 25,
+        "Input": {
+          "Id": "E10",
+          "BookedDay": 5,
+          "ValueDay": 5,
+          "Kind": "Credit",
+          "AccountId": "ACC-002",
+          "Amount": 10.000,
+          "Reference": null,
+          "Instalments": 3
+        },
+        "RecordedDay": 6,
+        "Accepted": true,
+        "Error": null
+      }
+    ],
+    "Fees": [
+      {
+        "AccountId": "ACC-001",
+        "Day": 2,
+        "RecordedDay": 5,
+        "Amount": 25.00
+      },
+      {
+        "AccountId": "ACC-001",
+        "Day": 4,
+        "RecordedDay": 5,
+        "Amount": 25.00
+      },
+      {
+        "AccountId": "ACC-001",
+        "Day": 5,
+        "RecordedDay": 6,
+        "Amount": 25.00
+      }
+    ],
+    "Accruals": [
+      {
+        "AccountId": "ACC-001",
+        "Day": 1,
+        "Basis": 250.00,
+        "Amount": 0.10
+      },
+      {
+        "AccountId": "ACC-001",
+        "Day": 2,
+        "Basis": 225.00,
+        "Amount": 0.09
+      },
+      {
+        "AccountId": "ACC-001",
+        "Day": 3,
+        "Basis": 625.00,
+        "Amount": 0.25
+      },
+      {
+        "AccountId": "ACC-001",
+        "Day": 4,
+        "Basis": 415.00,
+        "Amount": 0.17
+      },
+      {
+        "AccountId": "ACC-001",
+        "Day": 5,
+        "Basis": 390.00,
+        "Amount": 0.16
+      },
+      {
+        "AccountId": "ACC-001",
+        "Day": 6,
+        "Basis": 390.00,
+        "Amount": 0.16
+      },
+      {
+        "AccountId": "ACC-002",
+        "Day": 1,
+        "Basis": 0.000,
+        "Amount": 0
+      },
+      {
+        "AccountId": "ACC-002",
+        "Day": 2,
+        "Basis": 0.000,
+        "Amount": 0
+      },
+      {
+        "AccountId": "ACC-002",
+        "Day": 3,
+        "Basis": 0.000,
+        "Amount": 0
+      },
+      {
+        "AccountId": "ACC-002",
+        "Day": 4,
+        "Basis": 0.000,
+        "Amount": 0
+      },
+      {
+        "AccountId": "ACC-002",
+        "Day": 5,
+        "Basis": 10.000,
+        "Amount": 0.004
+      },
+      {
+        "AccountId": "ACC-002",
+        "Day": 6,
+        "Basis": 10.000,
+        "Amount": 0.004
+      }
+    ],
+    "Balances": [
+      {
+        "Id": "ACC-001",
+        "Available": 390.93,
+        "Current": [
+          {
+            "Sequence": 10,
+            "SourceId": "E5",
+            "AccountId": "ACC-001",
+            "AuthorizationId": "Auth-A",
+            "RecordedDay": 4,
+            "BookedDay": 4,
+            "ValueDay": 4,
+            "HoldAmount": 200,
+            "Status": 1
+          },
+          {
+            "Sequence": 17,
+            "SourceId": "E8",
+            "AccountId": "ACC-001",
+            "AuthorizationId": "Auth-B",
+            "RecordedDay": 5,
+            "BookedDay": 5,
+            "ValueDay": 5,
+            "HoldAmount": 90,
+            "Status": 3
+          }
+        ],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 250.00,
+            "Basis": 250.00
+          },
+          {
+            "Day": 2,
+            "Balance": 225.00,
+            "Basis": 225.00
+          },
+          {
+            "Day": 3,
+            "Balance": 625.00,
+            "Basis": 625.00
+          },
+          {
+            "Day": 4,
+            "Balance": 415.00,
+            "Basis": 415.00
+          },
+          {
+            "Day": 5,
+            "Balance": 390.00,
+            "Basis": 390.00
+          },
+          {
+            "Day": 6,
+            "Balance": 390.93,
+            "Basis": 390.00
+          }
+        ]
+      },
+      {
+        "Id": "ACC-002",
+        "Available": 10.008,
+        "Current": [],
+        "Daily": [
+          {
+            "Day": 1,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 2,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 3,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 4,
+            "Balance": 0.000,
+            "Basis": 0.000
+          },
+          {
+            "Day": 5,
+            "Balance": 10.000,
+            "Basis": 10.000
+          },
+          {
+            "Day": 6,
+            "Balance": 10.008,
+            "Basis": 10.000
+          }
+        ]
+      }
+    ]
+  }
+]
