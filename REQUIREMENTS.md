@@ -17,4 +17,4 @@
 - Required files: README.md, NUMBERS.md, AMBIGUITIES.md, REJECTED.md, WORKLOG.md, this map.
 - One inline-annotated failing test against own model: executable `--known-failure`, actual nonzero result, preserved output.
 - Part 2: four required sections in `docs/ARCHITECTURE.md` and rendered `docs/architecture-and-tradeoffs.pdf`; 2-4 pages and below 25 MB. No replay or rule restatement.
-- Public GitHub link: publication requires the owner's confirmation after local review. Do not treat the proposed URL as a published repository until remote and signed-out access are verified.
+- Public GitHub link: https://github.com/YoussefKhaled-92/in-memory-account-ledger . Published after the owner's explicit confirmation. Original six commits preserved intact; first GitHub verification succeeded. Independent anonymous GitHub API request returned HTTP 200 and `private=false`.

@@ -2,6 +2,8 @@
 
 A small C#/.NET 10 ledger with immutable postings, immutable authorization transitions, value-dated queries, configurable financial policies, and an exact arrival-order replay. No HTTP service, database, persistence adapter, or UI. Core state exists only in memory.
 
+Public submission: [GitHub repository](https://github.com/YoussefKhaled-92/in-memory-account-ledger). Anonymous access was verified after publication; the original six implementation/review commits were pushed intact. [GitHub verification](https://github.com/YoussefKhaled-92/in-memory-account-ledger/actions) builds and runs both the regression suite and the documented known-failure probe.
+
 ## Run
 
 Install the .NET 10 SDK. No third-party packages are needed. From the repository root:
