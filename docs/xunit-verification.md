@@ -23,4 +23,8 @@ The failing fact is `AuthorizationExpiryTests.Abandoned_authorization_should_eve
 - Production source and complete-history fixtures unchanged from the preceding commit.
 - Full local replay matches the pre-migration executable baseline byte-for-byte: SHA-256 `aa8aa9fcdcb749dfac34d11c136d78070bc26986eb28c37559cadbe0851fcd56` (3729 bytes). The unchanged committed baseline uses LF; Windows executable uses CRLF. CI uses Linux `cmp` without normalization.
 - PDF regenerated as four pages; every rendered page visually inspected.
-- Local test-host communication and formatter named-pipe access were blocked by environment permissions. Those attempts are not counted as successful test/format verification. GitHub Actions runs both checks and exports complete TRX and console output; actual remote results are recorded after publication.
+- Local test-host communication and formatter named-pipe access were blocked by environment permissions. Those attempts are not counted as successful test/format verification. GitHub Actions runs both checks and exports complete TRX and console output; remote results are recorded below.
+
+## Remote verification
+
+Verified at 2026-11-15T09:08:14+02:00 (Africa/Cairo): commit eb6c9640e82a8d865edbb107280cde855c68df68 passed GitHub Actions run [43688438143](https://github.com/YoussefKhaled-92/in-memory-account-ledger/actions/runs/43688438143). Release build, formatting, all 53 tests and byte-exact replay verification succeeded. The test command itself correctly exited 1: 52 passed, one failed, zero skipped; the validator confirmed the actual expiry assertion (expected 0, actual 1). Timestamped test output is captured in test-output.txt; full TRX and console output are attached to the run as verification-output.

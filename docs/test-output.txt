@@ -1,0 +1,16 @@
+2026-11-15T07:07:11.5700146Z Test run for /home/runner/work/in-memory-account-ledger/in-memory-account-ledger/tests/Ledger.Tests/bin/Release/net10.0/Ledger.Tests.dll (.NETCoreApp,Version=v10.0)
+2026-11-15T07:07:11.5701932Z A total of 1 test files matched the specified pattern.
+2026-11-15T07:07:11.5703347Z [xUnit.net 00:00:00.28]     AuthorizationExpiryTests.Abandoned_authorization_should_eventually_expire [FAIL]
+2026-11-15T07:07:11.5704690Z   Failed AuthorizationExpiryTests.Abandoned_authorization_should_eventually_expire [53 ms]
+2026-11-15T07:07:11.5705574Z   Error Message:
+2026-11-15T07:07:11.5705982Z    Assert.Equal() Failure: Values differ
+2026-11-15T07:07:11.5706473Z Expected: 0
+2026-11-15T07:07:11.5706812Z Actual:   1
+2026-11-15T07:07:11.5707183Z   Stack Trace:
+2026-11-15T07:07:11.5708445Z      at AuthorizationExpiryTests.Abandoned_authorization_should_eventually_expire() in /home/runner/work/in-memory-account-ledger/in-memory-account-ledger/tests/Ledger.Tests/Suites/AuthorizationExpiryTests.cs:line 20
+2026-11-15T07:07:11.5709834Z    at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+2026-11-15T07:07:11.5710643Z    at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+2026-11-15T07:07:11.5711647Z Results File: /home/runner/work/in-memory-account-ledger/in-memory-account-ledger/tests/Ledger.Tests/TestResults/tests.trx
+2026-11-15T07:07:11.5712436Z
+2026-11-15T07:07:11.5712944Z Failed!  - Failed:     1, Passed:    52, Skipped:     0, Total:    53, Duration: 204 ms - Ledger.Tests.dll (net10.0)
+2026-11-15T07:07:11.5963359Z Verified 53 executed: 52 passed, one real expiry assertion failure (expected 0, actual 1), zero skips.
