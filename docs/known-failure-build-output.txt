@@ -1,0 +1,13 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Ledger.Domain -> C:\Users\YoussefKhaled\Documents\Codex\2026-11-15\referenced-chatgpt-conversation-this-is-an\work\repo\src\Ledger.Domain\bin\Release\net10.0\Ledger.Domain.dll
+  Ledger.Application -> C:\Users\YoussefKhaled\Documents\Codex\2026-11-15\referenced-chatgpt-conversation-this-is-an\work\repo\src\Ledger.Application\bin\Release\net10.0\Ledger.Application.dll
+  Ledger.Infrastructure.InMemory -> C:\Users\YoussefKhaled\Documents\Codex\2026-11-15\referenced-chatgpt-conversation-this-is-an\work\repo\src\Ledger.Infrastructure.InMemory\bin\Release\net10.0\Ledger.Infrastructure.InMemory.dll
+  Ledger.Core -> C:\Users\YoussefKhaled\Documents\Codex\2026-11-15\referenced-chatgpt-conversation-this-is-an\work\repo\src\Ledger.Core\bin\Release\net10.0\Ledger.Core.dll
+  Ledger.KnownFailures -> C:\Users\YoussefKhaled\Documents\Codex\2026-11-15\referenced-chatgpt-conversation-this-is-an\work\repo\tests\Ledger.KnownFailures\bin\Release\net10.0\Ledger.KnownFailures.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:04.96

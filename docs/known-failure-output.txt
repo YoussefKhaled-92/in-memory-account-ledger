@@ -1,54 +1,16 @@
-PASS Every scenario boundary preserves the pre-refactor complete history
-PASS A client operation runs through the unchanged coordinator and retains retry/finality rules
-PASS Registry rejects duplicate operation registrations before execution
-PASS Registry rejects blank operation keys
-PASS Unknown operation records a decline and leaves money and holds unchanged
-PASS Day-boundary policy failure stays fatal before dispatch without recording an outcome
-PASS Post-success fee failure retains the accepted outcome as documented
-PASS Authorization domain forbids terminal settlement and excess capture
-PASS Containers isolate journal, sequences, holds, fees, accruals and finality per ledger
-PASS Per-ledger container preserves independent fee and interest configuration
-PASS Facade eagerly rejects duplicate handlers and invalid configuration
-PASS Disposal releases only the owned container and never finalizes the ledger
-PASS A custom handler registered in one container does not leak into another
-PASS Criterion 1: raw Day 2 principal is -370 at E8
-PASS Criterion 2 refused: E7 affects Day 2 and Day 4 immediately, Day 5 on close
-PASS Day 3 stays positive after the Day 2 fee and is not charged
-PASS Criterion 3: Auth-A settles and releases unused 15
-PASS Criterion 4: unknown authorization cannot debit funds
-PASS Criterion 5: approved hold changes available only
-PASS Auth-B is rejected at its original decision point and never retried after E9
-PASS Criterion 6 refused: reversing E7 retains 75 of assessed fees
-PASS Criterion 7 refused: BHD minor units conserved across unequal rounded parts
-PASS Criterion 8: capitalization is exactly the sum of daily rounded accruals
-PASS Final AED daily balances agree with independent hand calculation
-PASS Final daily AED accruals are restated, positive only, excluding capitalization
-PASS E10 remains last, its booked day does not rewind recorded time
-PASS Backdating preserves every previously appended entry and decision
-PASS Public collection views cannot mutate ledger state
-PASS Identical input retry is idempotent
-PASS Conflicting input ID is refused before financial mutation
-PASS Repeated declined authorization returns original rejection without extra history
-PASS Exact available boundary approves; one minor unit above rejects
-PASS Settlement above hold rejects without closing hold or debiting
-PASS Repeated settlement with new ID cannot debit twice
-PASS Authorization identity is account scoped
-PASS Explicit release ends a hold and leaves ledger unchanged
-PASS Settlement affordability is not retrospectively re-decided
-PASS Duplicate reversal is rejected with no duplicate compensating entry
-PASS Unknown reversal and reversal at different value date are rejected
-PASS Reversing an instalment credit compensates every part exactly
-PASS Finalization and fee assessment are idempotent
-PASS New events after finalization are refused
-PASS Fee amount is configurable and participates in downstream daily basis
-PASS Interest rate is configurable, positive balances only
-PASS Rounding is AwayFromZero for both currency precisions
-PASS Allocator property: conserve total across currency, amount, and part counts
-PASS Invalid amount and instalment count reject without principal entries
-PASS Unknown account rejects and records an error
-PASS Unsupported BHD overdraft policy fails explicitly, no invented FX fee
-PASS Invalid dates are refused before input replay
-PASS Reserved system source IDs cannot collide with external input
-PASS Invalid later-account interest policy cannot partly capitalize an earlier account
-FAIL KNOWN LIMITATION: abandoned authorization should eventually expire: Expected 0; actual 1.
-52 passed; 1 failed; 53 total.
+Test run for C:\Users\YoussefKhaled\Documents\Codex\2026-11-15\referenced-chatgpt-conversation-this-is-an\work\repo\tests\Ledger.KnownFailures\bin\Release\net10.0\Ledger.KnownFailures.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.37]     AuthorizationExpiryTests.Abandoned_authorization_should_eventually_expire [FAIL]
+  Failed AuthorizationExpiryTests.Abandoned_authorization_should_eventually_expire [75 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 0
+Actual:   1
+  Stack Trace:
+     at AuthorizationExpiryTests.Abandoned_authorization_should_eventually_expire() in C:\Users\YoussefKhaled\Documents\Codex\2026-11-15\referenced-chatgpt-conversation-this-is-an\work\repo\tests\Ledger.KnownFailures\AuthorizationExpiryTests.cs:line 21
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+WARNING: Overwriting results file: C:\Users\YoussefKhaled\Documents\Codex\2026-11-15\referenced-chatgpt-conversation-this-is-an\work\repo\TestResults\known-failure\known-failure.trx
+Results File: C:\Users\YoussefKhaled\Documents\Codex\2026-11-15\referenced-chatgpt-conversation-this-is-an\work\repo\TestResults\known-failure\known-failure.trx
+
+Failed!  - Failed:     1, Passed:     0, Skipped:     0, Total:     1, Duration: 96 ms - Ledger.KnownFailures.dll (net10.0)

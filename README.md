@@ -6,23 +6,23 @@ Public submission: [GitHub repository](https://github.com/YoussefKhaled-92/in-me
 
 ## Run
 
-Install the .NET 10 SDK. Restore uses nuget.org for Microsoft's `Microsoft.Extensions.DependencyInjection` 10.0.0 package and its abstractions dependency. From the repository root:
+Install the .NET 10 SDK. Restore uses nuget.org for Microsoft's DI package and test-only Microsoft.NET.Test.Sdk 18.0.1, xUnit 2.9.3 and Visual Studio runner 3.1.5 (plus transitive dependencies). From the repository root:
 
 ```sh
 dotnet build AccountLedger.slnx -c Release -m:1 -p:UseSharedCompilation=false
-dotnet run --project tests/Ledger.Tests -c Release
+dotnet test -c Release
 dotnet run --project src/Ledger.Replay -c Release
 ```
 
-The test project is a dependency-free executable test harness, **not a VSTest/xUnit project**. Use `dotnet run`, not `dotnet test`. A failed assertion produces a nonzero exit code. The test runner covers all eight acceptance criteria, state immutability, monetary conservation, retries, validation, policy configuration, and authorization/reversal boundaries. Its allocator property check explores 700 combinations.
+The conventional xUnit project exposes all 52 existing regression cases as individually discovered facts. Bare `dotnet test` uses `AccountLedger.slnx` and runs only this passing suite. The tests cover all eight acceptance criteria, complete history, state immutability, monetary conservation, retries, validation, policy configuration, and authorization/reversal boundaries. The allocator property check still explores 700 combinations. Numeric formatting uses invariant culture. VSTest supports discovery, filtering and TRX results; for example, add `--logger "trx;LogFileName=regression.trx"`.
 
 The assessment also requires a genuinely failing test against the design:
 
 ```sh
-dotnet run --project tests/Ledger.Tests -c Release -- --known-failure
+dotnet test tests/Ledger.KnownFailures -c Release --filter Category=KnownFailure
 ```
 
-This runs the passing suite plus one inline-annotated assertion that an abandoned authorization should expire. It **fails, with exit code 1**: this model has no automatic expiry. It is never counted as a passing test or hidden behind a skip. Both the opt-in command and its actual output are checked by CI. See `tests/Ledger.Tests/Program.cs` and REJECTED.md.
+This explicitly runs the separate `Ledger.KnownFailures` project: one inline-annotated xUnit fact asserting that an abandoned authorization should expire. The project is intentionally outside the default solution; `tests/AccountLedger.KnownFailures.slnx` builds it with its dependencies. Its `Category=KnownFailure` trait also supports filtering. It **fails, with exit code 1**: this model has no automatic expiry. It is never counted as a passing test or hidden behind a skip. Both the opt-in command and its actual output are checked by CI. CI checks both exit 1 and the TRX result: exactly one failed expiry assertion (expected 0 active holds, actual 1), with no skips. See `tests/Ledger.KnownFailures/AuthorizationExpiryTests.cs` and REJECTED.md.
 
 ## Read the output
 
@@ -43,7 +43,8 @@ Assessed fees: AED 25 on Days 2, 4 and 5. Errors: E6 unknown authorization and E
 - `src/Ledger.Infrastructure.InMemory`: private append-only histories, shared sequence allocation and detached read-only snapshots.
 - `src/Ledger.Core`: small `AccountLedger` compatibility facade and Microsoft DI composition root; business workflows are in Application.
 - `src/Ledger.Replay`: specified scenario and console reporting; no calculations duplicated in the printer. Tests link the scenario fixture as source.
-- `tests/Ledger.Tests`: original assertions, pre-refactor complete-history fixture, extension/workflow tests and the explicit failing design probe.
+- `tests/Ledger.Tests`: 52 passing xUnit facts, original regression assertions, pre-refactor complete-history fixture and extension/composition tests.
+- `tests/Ledger.KnownFailures`: separate opt-in, genuinely failing expiry fact; excluded from the standard solution.
 
 Read [the architecture and extension guide](docs/CLEAN-ARCHITECTURE.md) for the dependency diagram, business boundaries, registration example and migration tradeoffs. New operation kinds register an `IEventHandler`; dispatch has no switch. `EventKind` is an open, string-backed value type, while the existing operation names stay unchanged. Domain types moved to `Ledger.Domain`; numeric enum casts/serialization and binary compatibility are not preserved.
 
@@ -62,3 +63,7 @@ Read AMBIGUITIES.md before comparing numbers: retained fees and restated interes
 Part 2 is `docs/architecture-and-tradeoffs.pdf`, with editable text in `docs/ARCHITECTURE.md`. It covers the four requested sections, without reproducing the input stream or rule text.
 
 This is intentionally a single-writer assessment model. No concurrency guarantee, durable recovery, automatic authorization expiry, automatic fee refunds, effective-dated policy catalog, FX conversion, or complete double-entry general ledger is claimed. Unsupported BHD overdraft charging fails explicitly rather than inventing a conversion. Decimal overflow/resource exhaustion and failures of a custom policy are fatal configuration/runtime faults, not ordinary customer declines. Production transaction boundaries and recovery are discussed in Part 2.
+
+## Verification evidence
+
+Commands, timestamps, byte comparison and scope checks for the xUnit migration are in [verification](docs/xunit-verification.md). Actual captured build, regression and opt-in failure outputs are in `docs/build-output.txt`, `docs/test-output.txt` and `docs/known-failure-output.txt`. CI exports fresh TRX artifacts and compares the complete replay byte-for-byte with the unchanged baseline. The migration changes test infrastructure and documentation only; production source and financial decisions remain unchanged.

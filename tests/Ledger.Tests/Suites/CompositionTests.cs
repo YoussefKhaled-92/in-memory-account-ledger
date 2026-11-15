@@ -4,73 +4,76 @@ using System.Linq;
 using Ledger.Application;
 using Ledger.Core;
 using Ledger.Domain;
+using Xunit;
 
-static class CompositionTests
+public class CompositionTests
 {
-    public static void Register(Action<string, Action> test)
+    [Fact(DisplayName = "Containers isolate journal, sequences, holds, fees, accruals and finality per ledger")]
+    public void Containers_isolate_journal_sequences_holds_fees_accruals_and_finality_per_ledger()
     {
-        test("Containers isolate journal, sequences, holds, fees, accruals and finality per ledger", () =>
-        {
-            using var first = AssessmentScenario.Create();
-            using var second = AssessmentScenario.Create();
-            first.Process(new("C", 1, 1, EventKind.Credit, "ACC-001", 100m));
-            first.Process(new("H", 1, 1, EventKind.Authorization, "ACC-001", 20m, "H"));
-            first.Process(new("D", 2, 2, EventKind.Debit, "ACC-001", 200m));
-            first.Finish();
+        using var first = AssessmentScenario.Create();
+        using var second = AssessmentScenario.Create();
+        first.Process(new("C", 1, 1, EventKind.Credit, "ACC-001", 100m));
+        first.Process(new("H", 1, 1, EventKind.Authorization, "ACC-001", 20m, "H"));
+        first.Process(new("D", 2, 2, EventKind.Debit, "ACC-001", 200m));
+        first.Finish();
 
-            Check(first.Fees.Count > 0 && first.Accruals.Count > 0);
-            Check(second.RecordedDay == 1 && second.Entries.Count == 0 && second.Results.Count == 0);
-            Check(second.AuthorizationHistory.Count == 0 && second.Fees.Count == 0 && second.Accruals.Count == 0);
-            Check(second.Available("ACC-001") == 0m);
-            var result = second.Process(new("C", 1, 1, EventKind.Credit, "ACC-001", 10m));
-            Check(result.Accepted && result.Sequence == 2 && second.Entries.Single().Sequence == 1);
-            Check(second.Balance("ACC-001", 1) == 10m);
-        });
+        Check(first.Fees.Count > 0 && first.Accruals.Count > 0);
+        Check(second.RecordedDay == 1 && second.Entries.Count == 0 && second.Results.Count == 0);
+        Check(second.AuthorizationHistory.Count == 0 && second.Fees.Count == 0 && second.Accruals.Count == 0);
+        Check(second.Available("ACC-001") == 0m);
+        var result = second.Process(new("C", 1, 1, EventKind.Credit, "ACC-001", 10m));
+        Check(result.Accepted && result.Sequence == 2 && second.Entries.Single().Sequence == 1);
+        Check(second.Balance("ACC-001", 1) == 10m);
+    }
 
-        test("Per-ledger container preserves independent fee and interest configuration", () =>
-        {
-            using var first = Create(5m, 0m);
-            using var second = Create(7m, 0.01m);
-            first.Process(new("D", 1, 1, EventKind.Debit, "A", 1m));
-            second.Process(new("C", 1, 1, EventKind.Credit, "A", 100m));
-            first.Finish();
-            second.Finish();
-            Check(first.Balance("A", 2) == -11m && first.Fees.Sum(f => f.Amount) == 10m);
-            Check(second.Balance("A", 2) == 102m && second.Fees.Count == 0);
-        });
+    [Fact(DisplayName = "Per-ledger container preserves independent fee and interest configuration")]
+    public void Per_ledger_container_preserves_independent_fee_and_interest_configuration()
+    {
+        using var first = Create(5m, 0m);
+        using var second = Create(7m, 0.01m);
+        first.Process(new("D", 1, 1, EventKind.Debit, "A", 1m));
+        second.Process(new("C", 1, 1, EventKind.Credit, "A", 100m));
+        first.Finish();
+        second.Finish();
+        Check(first.Balance("A", 2) == -11m && first.Fees.Sum(f => f.Amount) == 10m);
+        Check(second.Balance("A", 2) == 102m && second.Fees.Count == 0);
+    }
 
-        test("Facade eagerly rejects duplicate handlers and invalid configuration", () =>
-        {
-            Expect<ArgumentException>(() => Create(5m, 0m, [new PostCredit()]));
-            Expect<ArgumentOutOfRangeException>(() => new AccountLedger(
-                [new Account("A", AssessmentScenario.Aed, 0m)],
-                new FixedOverdraftFeePolicy(new Dictionary<string, decimal> { ["AED"] = 5m }),
-                new DailyInterestPolicy(0m), 0));
-            Expect<ArgumentException>(() => new AccountLedger([], new ClientServices(), new ClientServices(), 2));
-        });
+    [Fact(DisplayName = "Facade eagerly rejects duplicate handlers and invalid configuration")]
+    public void Facade_eagerly_rejects_duplicate_handlers_and_invalid_configuration()
+    {
+        Expect<ArgumentException>(() => Create(5m, 0m, [new PostCredit()]));
+        Expect<ArgumentOutOfRangeException>(() => new AccountLedger(
+            [new Account("A", AssessmentScenario.Aed, 0m)],
+            new FixedOverdraftFeePolicy(new Dictionary<string, decimal> { ["AED"] = 5m }),
+            new DailyInterestPolicy(0m), 0));
+        Expect<ArgumentException>(() => new AccountLedger([], new ClientServices(), new ClientServices(), 2));
+    }
 
-        test("Disposal releases only the owned container and never finalizes the ledger", () =>
-        {
-            var client = new ClientServices();
-            var ledger = new AccountLedger([new Account("A", AssessmentScenario.Aed, 100m)],
-                client, client, 2, [client]);
-            Check(ledger.Process(new("P", 1, 1, client.Kind, "A", 3m)).Accepted);
-            ledger.Dispose();
-            ledger.Dispose();
-            Check(!client.Disposed && ledger.Accruals.Count == 0 && ledger.Balance("A", 1) == 103m);
-            Expect<ObjectDisposedException>(() => ledger.Process(new("X", 1, 1, client.Kind, "A", 1m)));
-            Expect<ObjectDisposedException>(ledger.Finish);
-        });
+    [Fact(DisplayName = "Disposal releases only the owned container and never finalizes the ledger")]
+    public void Disposal_releases_only_the_owned_container_and_never_finalizes_the_ledger()
+    {
+        var client = new ClientServices();
+        var ledger = new AccountLedger([new Account("A", AssessmentScenario.Aed, 100m)],
+            client, client, 2, [client]);
+        Check(ledger.Process(new("P", 1, 1, client.Kind, "A", 3m)).Accepted);
+        ledger.Dispose();
+        ledger.Dispose();
+        Check(!client.Disposed && ledger.Accruals.Count == 0 && ledger.Balance("A", 1) == 103m);
+        Expect<ObjectDisposedException>(() => ledger.Process(new("X", 1, 1, client.Kind, "A", 1m)));
+        Expect<ObjectDisposedException>(ledger.Finish);
+    }
 
-        test("A custom handler registered in one container does not leak into another", () =>
-        {
-            var client = new ClientServices();
-            using var first = Create(5m, 0m, [client]);
-            using var second = Create(5m, 0m);
-            var input = new FinancialEvent("P", 1, 1, client.Kind, "A", 3m);
-            Check(first.Process(input).Accepted);
-            Check(!second.Process(input).Accepted && second.Entries.Count == 0);
-        });
+    [Fact(DisplayName = "A custom handler registered in one container does not leak into another")]
+    public void A_custom_handler_registered_in_one_container_does_not_leak_into_another()
+    {
+        var client = new ClientServices();
+        using var first = Create(5m, 0m, [client]);
+        using var second = Create(5m, 0m);
+        var input = new FinancialEvent("P", 1, 1, client.Kind, "A", 3m);
+        Check(first.Process(input).Accepted);
+        Check(!second.Process(input).Accepted && second.Entries.Count == 0);
     }
 
     static AccountLedger Create(decimal fee, decimal rate, IEnumerable<IEventHandler>? handlers = null) =>
@@ -78,27 +81,9 @@ static class CompositionTests
             new FixedOverdraftFeePolicy(new Dictionary<string, decimal> { ["AED"] = fee }),
             new DailyInterestPolicy(rate), 2, handlers);
 
-    static void Check(bool condition)
-    {
-        if (!condition)
-        {
-            throw new Exception("Container composition contract violated.");
-        }
-    }
+    static void Check(bool condition) => Assert.True(condition);
 
-    static void Expect<T>(Action body) where T : Exception
-    {
-        try
-        {
-            body();
-        }
-        catch (T)
-        {
-            return;
-        }
-
-        throw new Exception($"Expected {typeof(T).Name}.");
-    }
+    static void Expect<T>(Action body) where T : Exception => Assert.ThrowsAny<T>(body);
 
     sealed class ClientServices : IEventHandler, IOverdraftFeePolicy, IInterestPolicy, IDisposable
     {
