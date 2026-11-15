@@ -2,7 +2,7 @@
 
 A small C#/.NET 10 ledger with Clean Architecture boundaries, immutable postings, immutable authorization transitions, value-dated queries, configurable financial policies, and an exact arrival-order replay. No HTTP service, database, persistence adapter, or UI. Core state exists only in memory.
 
-Public submission: [GitHub repository](https://github.com/YoussefKhaled-92/in-memory-account-ledger). Anonymous access was verified after publication; the original six implementation/review commits were pushed intact. [GitHub verification](https://github.com/YoussefKhaled-92/in-memory-account-ledger/actions) builds and runs both the regression suite and the documented known-failure probe.
+Public submission: [GitHub repository](https://github.com/YoussefKhaled-92/in-memory-account-ledger). Anonymous access was verified after publication; the original six implementation/review commits were pushed intact. [GitHub verification](https://github.com/YoussefKhaled-92/in-memory-account-ledger/actions) builds and runs the complete suite, including the required design failure.
 
 ## Run
 
@@ -14,15 +14,11 @@ dotnet test -c Release
 dotnet run --project src/Ledger.Replay -c Release
 ```
 
-The conventional xUnit project exposes all 52 existing regression cases as individually discovered facts. Bare `dotnet test` uses `AccountLedger.slnx` and runs only this passing suite. The tests cover all eight acceptance criteria, complete history, state immutability, monetary conservation, retries, validation, policy configuration, and authorization/reversal boundaries. The allocator property check still explores 700 combinations. Numeric formatting uses invariant culture. VSTest supports discovery, filtering and TRX results; for example, add `--logger "trx;LogFileName=regression.trx"`.
+The single xUnit test project runs **53 tests: 52 pass and one deliberately fails**, with zero skips. `dotnet test` therefore exits 1 and reports a failed run. This is intentional: the assessment requires one real, inline-annotated failing test against the design. `Suites/AuthorizationExpiryTests.cs` asserts that an abandoned hold expires; actual active holds remain 1 because automatic expiry is not implemented. There is no separate project, solution, opt-in mode or exclusion filter.
 
-The assessment also requires a genuinely failing test against the design:
+The other 52 cases cover all eight acceptance criteria, complete history, state immutability, monetary conservation, retries, validation, policy configuration, and authorization/reversal boundaries. The allocator property check explores 700 combinations. Numeric formatting uses invariant culture. VSTest supports discovery and TRX results; add `--logger "trx;LogFileName=tests.trx"` to export them.
 
-```sh
-dotnet test tests/Ledger.KnownFailures -c Release --filter Category=KnownFailure
-```
-
-This explicitly runs the separate `Ledger.KnownFailures` project: one inline-annotated xUnit fact asserting that an abandoned authorization should expire. The project is intentionally outside the default solution; `tests/AccountLedger.KnownFailures.slnx` builds it with its dependencies. Its `Category=KnownFailure` trait also supports filtering. It **fails, with exit code 1**: this model has no automatic expiry. It is never counted as a passing test or hidden behind a skip. Both the opt-in command and its actual output are checked by CI. CI checks both exit 1 and the TRX result: exactly one failed expiry assertion (expected 0 active holds, actual 1), with no skips. See `tests/Ledger.KnownFailures/AuthorizationExpiryTests.cs` and REJECTED.md.
+CI runs the same complete suite. Its verification step requires exit 1 and checks that exactly the documented expiry assertion fails (expected 0 active holds, actual 1), all other 52 pass, and none are skipped. Any additional failure or a missing test fails CI. A successful CI verification does not mean that all tests passed.
 
 ## Read the output
 
@@ -43,8 +39,7 @@ Assessed fees: AED 25 on Days 2, 4 and 5. Errors: E6 unknown authorization and E
 - `src/Ledger.Infrastructure.InMemory`: private append-only histories, shared sequence allocation and detached read-only snapshots.
 - `src/Ledger.Core`: small `AccountLedger` compatibility facade and Microsoft DI composition root; business workflows are in Application.
 - `src/Ledger.Replay`: specified scenario and console reporting; no calculations duplicated in the printer. Tests link the scenario fixture as source.
-- `tests/Ledger.Tests`: 52 passing xUnit facts, original regression assertions, pre-refactor complete-history fixture and extension/composition tests.
-- `tests/Ledger.KnownFailures`: separate opt-in, genuinely failing expiry fact; excluded from the standard solution.
+- `tests/Ledger.Tests`: all 53 xUnit facts: 52 passing regression cases and the required failing expiry test, with original fixtures and extension/composition tests.
 
 Read [the architecture and extension guide](docs/CLEAN-ARCHITECTURE.md) for the dependency diagram, business boundaries, registration example and migration tradeoffs. New operation kinds register an `IEventHandler`; dispatch has no switch. `EventKind` is an open, string-backed value type, while the existing operation names stay unchanged. Domain types moved to `Ledger.Domain`; numeric enum casts/serialization and binary compatibility are not preserved.
 
@@ -66,4 +61,4 @@ This is intentionally a single-writer assessment model. No concurrency guarantee
 
 ## Verification evidence
 
-Commands, timestamps, byte comparison and scope checks for the xUnit migration are in [verification](docs/xunit-verification.md). Actual captured build, regression and opt-in failure outputs are in `docs/build-output.txt`, `docs/test-output.txt` and `docs/known-failure-output.txt`. CI exports fresh TRX artifacts and compares the complete replay byte-for-byte with the unchanged baseline. The migration changes test infrastructure and documentation only; production source and financial decisions remain unchanged.
+Commands, timestamps, byte comparison and scope checks for the xUnit migration are in [verification](docs/xunit-verification.md). The actual local build capture is `docs/build-output.txt`; CI exports the complete 53-test output and TRX as verification artifacts. CI exports fresh TRX artifacts and compares the complete replay byte-for-byte with the unchanged baseline. The migration changes test infrastructure and documentation only; production source and financial decisions remain unchanged.

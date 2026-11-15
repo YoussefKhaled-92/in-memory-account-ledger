@@ -15,7 +15,7 @@
 
 - **Automatic compensating fee refunds**, discussed before implementation: rejected in favor of retaining actual assessments until a distinct refund instruction exists. Neither convention is inferred as a universal bank standard. The decision is explicit in AMBIGUITIES.md; this was a design alternative, not code falsely claimed to have been implemented.
 - **One immediate capitalization per account while still calculating later accounts**: the first implementation followed this sequence. Review replaced it with preparing and validating every account's daily accruals before appending any capitalization. Otherwise a malformed custom interest policy for a later account could leave a partially capitalized batch.
-- **Dependency-free executable test harness (superseded):** selected at initial setup to avoid test packages. Replaced on 15 November 2026 at the owner's request with conventional xUnit, Microsoft.NET.Test.Sdk and the VSTest adapter. Standard discovery, filtering and TRX export now work. The real failing expiry probe lives in a separate opt-in project outside the default solution; no Skip or swallowed failure.
+- **Dependency-free executable test harness (superseded):** selected at initial setup to avoid test packages. Replaced on 15 November 2026 at the owner's request with conventional xUnit, Microsoft.NET.Test.Sdk and the VSTest adapter. Standard discovery, filtering and TRX export now work. The required expiry failure now runs alongside the 52 passing cases in the same project; no Skip or exclusion. The earlier separate project/solution was unnecessary for the assessment and removed at the owner's request.
 - **Sorting the supplied inputs by booked/value date**: rejected during fixture construction because E10 must stay last and approval decisions depend on information available at arrival.
 - **Rounding one aggregate interest total**: rejected while checking the independent numbers; daily rounding and aggregate rounding differ by 0.01 in this very fixture.
 - **Identical rounded BHD parts**: rejected at allocator design; they cannot conserve this total. We deliberately expose a largest-part difference of one minor unit instead.
@@ -24,10 +24,10 @@ Alternatives above distinguish design choices from code actually written and rep
 
 ## One failing test against our design
 
-`tests/Ledger.KnownFailures/AuthorizationExpiryTests.cs` contains the inline-annotated abandoned-authorization expiry test. Run:
+`tests/Ledger.Tests/Suites/AuthorizationExpiryTests.cs` contains the inline-annotated abandoned-authorization expiry test. Run:
 
 ```sh
-dotnet test tests/Ledger.KnownFailures -c Release --filter Category=KnownFailure
+dotnet test -c Release
 ```
 
-It expects no active hold after the window; actual count is one. This is a genuine red assertion and the process exits 1. It reveals indefinite funds encumbrance if a merchant disappears. It does not prove the specified supplied replay incorrect: the assessment explicitly leaves a possible hold unsettled, and does not mandate an expiry duration. A production implementation needs a network/product deadline, an append-only Expired transition, idempotent release and a policy for late presentment. The supported explicit Release path does not make automatic expiry exist.
+The full suite reports 52 passed and one failed, with no skips. This test expects no active hold after the window; actual count is one. This is a genuine red assertion and the process exits 1. It reveals indefinite funds encumbrance if a merchant disappears. It does not prove the specified supplied replay incorrect: the assessment explicitly leaves a possible hold unsettled, and does not mandate an expiry duration. A production implementation needs a network/product deadline, an append-only Expired transition, idempotent release and a policy for late presentment. The supported explicit Release path does not make automatic expiry exist.

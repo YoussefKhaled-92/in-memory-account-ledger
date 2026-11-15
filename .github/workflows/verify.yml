@@ -13,32 +13,27 @@ jobs:
       - run: dotnet build AccountLedger.slnx -c Release -m:1 -p:UseSharedCompilation=false
       - name: Verify source formatting and explicit imports
         run: dotnet format AccountLedger.slnx --no-restore --verify-no-changes --diagnostics IDE0011 IDE0005
-      - run: dotnet test AccountLedger.slnx -c Release --no-build --logger "trx;LogFileName=regression.trx"
-      - run: python3 scripts/verify-regression.py tests/Ledger.Tests/TestResults/regression.trx
-      - run: dotnet build tests/AccountLedger.KnownFailures.slnx -c Release -m:1 -p:UseSharedCompilation=false
-      - run: dotnet format tests/AccountLedger.KnownFailures.slnx --no-restore --verify-no-changes --diagnostics IDE0011 IDE0005
+      - name: Run all 53 tests and verify the required design failure
+        shell: bash
+        run: |
+          set +e
+          dotnet test AccountLedger.slnx -c Release --no-build --logger "trx;LogFileName=tests.trx" > test-output.txt 2>&1
+          result=$?
+          set -e
+          cat test-output.txt
+          test "$result" -eq 1
+          python3 scripts/verify-test-results.py tests/Ledger.Tests/TestResults/tests.trx
       - name: Verify exact replay output
         shell: bash
         run: |
           dotnet run --project src/Ledger.Replay -c Release --no-build > replay-output.txt
           cat replay-output.txt
           cmp docs/replay-output.txt replay-output.txt
-      - name: Verify the required known failure is real
-        shell: bash
-        run: |
-          set +e
-          dotnet test tests/Ledger.KnownFailures -c Release --no-build --filter Category=KnownFailure --logger "trx;LogFileName=known-failure.trx" --results-directory TestResults/known-failure > known-failure.txt 2>&1
-          result=$?
-          set -e
-          cat known-failure.txt
-          test "$result" -eq 1
-          python3 scripts/verify-known-failure.py TestResults/known-failure/known-failure.trx
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: verification-output
           path: |
             **/TestResults/*.trx
-            TestResults/**/*.trx
             replay-output.txt
-            known-failure.txt
+            test-output.txt

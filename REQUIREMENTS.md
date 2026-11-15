@@ -15,10 +15,10 @@
 - Incorrect criteria: all eight individually adjudicated in REJECTED.md and tested. Refused: 2, 6, 7, 8; criterion 1 qualified as principal-only.
 - Real intact Git history and timestamped work: actual repository commits plus WORKLOG.md; no squashing, backdating or fake failures.
 - Required files: README.md, NUMBERS.md, AMBIGUITIES.md, REJECTED.md, WORKLOG.md, this map.
-- One inline-annotated failing test against own model: separate xUnit project `tests/Ledger.KnownFailures`, trait `Category=KnownFailure`, actual exit 1, exact assertion checked from TRX, preserved output.
+- One inline-annotated failing test against own model: `tests/Ledger.Tests/Suites/AuthorizationExpiryTests.cs`, runs in the same 53-case suite, actual exit 1, exact assertion checked from TRX, preserved output.
 - Clean Architecture and extensibility: inward project references, distinct business handlers, `EventHandlerRegistry`, open `EventKind`, journal port, synchronous projections; xUnit client-extension and workflow-failure tests. Details in `docs/CLEAN-ARCHITECTURE.md`.
 - Behavior-preserving refactor: original 39 cases retained, complete scenario history captured before refactoring at every input boundary, original replay output compared unchanged; intentional expiry failure remains real.
 - Part 2: four required sections in `docs/ARCHITECTURE.md` and rendered `docs/architecture-and-tradeoffs.pdf`; 2-4 pages and below 25 MB. No replay or rule restatement.
 - Public GitHub link: https://github.com/YoussefKhaled-92/in-memory-account-ledger . Published after the owner's explicit confirmation. Original six commits preserved intact; first GitHub verification succeeded. Independent anonymous GitHub API request returned HTTP 200 and `private=false`.
 
-- Conventional test infrastructure: 52 discovered passing xUnit facts under `dotnet test`, Microsoft.NET.Test.Sdk and Visual Studio runner; separate explicit solution/project for the real red test. CI checks formatting, standard tests, byte-exact full replay, expected-failure exit and TRX assertion identity/counts. Commands and captured evidence: `docs/xunit-verification.md`.
+- Conventional test infrastructure: 53 discovered xUnit facts under `dotnet test` in one project: 52 pass and the required design test fails. Microsoft.NET.Test.Sdk and Visual Studio runner provide discovery/results. CI verifies formatting, byte-exact full replay, exit 1 and the exact 52-pass/one-failure TRX results. Commands and captured evidence: `docs/xunit-verification.md`.

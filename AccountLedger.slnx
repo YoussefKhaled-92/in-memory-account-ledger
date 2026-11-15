@@ -8,6 +8,5 @@
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/Ledger.Tests/Ledger.Tests.csproj" />
-    <File Path="tests/AccountLedger.KnownFailures.slnx" />
   </Folder>
 </Solution>

@@ -7,9 +7,8 @@ public class AuthorizationExpiryTests
 {
     // Deliberate real failure: Finish is a fee/interest watermark, not an expiry scheduler.
     // Production needs a network-specific deadline and an append-only Expired transition.
-    // This project is outside the standard solution; run it explicitly. Never Skip this test.
+    // Runs with all other tests: this required design limitation must remain a real failure.
     [Fact]
-    [Trait("Category", "KnownFailure")]
     public void Abandoned_authorization_should_eventually_expire()
     {
         using var ledger = AssessmentScenario.Create();

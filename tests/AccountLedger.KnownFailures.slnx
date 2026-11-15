@@ -1,7 +1,0 @@
-<Solution>
-  <Project Path="../src/Ledger.Domain/Ledger.Domain.csproj" />
-  <Project Path="../src/Ledger.Application/Ledger.Application.csproj" />
-  <Project Path="../src/Ledger.Infrastructure.InMemory/Ledger.Infrastructure.InMemory.csproj" />
-  <Project Path="../src/Ledger.Core/Ledger.Core.csproj" />
-  <Project Path="Ledger.KnownFailures/Ledger.KnownFailures.csproj" />
-</Solution>

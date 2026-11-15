@@ -208,7 +208,7 @@ handle backdated suffixes and reconcile to the authoritative history.
 
 ## Compatibility, tests and tradeoffs
 
-All 52 regression cases (including the original 39, complete-history guard, seven extension and five composition cases) are now individually discovered xUnit facts. The real expiry probe remains in a separate opt-in xUnit project outside the standard solution. `dotnet test` runs the passing suite; `dotnet test tests/Ledger.KnownFailures -c Release --filter Category=KnownFailure` runs the real red assertion. No Skip or expected-failure wrapper is used. Test-only Microsoft.NET.Test.Sdk and the Visual Studio adapter provide VSTest discovery, filtering and TRX results. This adds restore dependencies to test infrastructure without adding dependencies to the inner layers. Existing
+All 52 regression cases (including the original 39, complete-history guard, seven extension and five composition cases) are now individually discovered xUnit facts. The required expiry test is the 53rd fact in the same project. Plain `dotnet test` executes all cases: 52 pass and the real expiry assertion fails, exit 1, zero skips. No extra solution, project, trait or opt-in mode is needed. Test-only Microsoft.NET.Test.Sdk and the Visual Studio adapter provide VSTest discovery, filtering and TRX results. This adds restore dependencies to test infrastructure without adding dependencies to the inner layers. Existing
 assertions retain their behavior; each file imports the Domain types it uses explicitly.
 `scenario-baseline.json` was captured before refactoring, at every input boundary and finality,
 and compares all histories, daily balances, availability, input fields and sequence values.
